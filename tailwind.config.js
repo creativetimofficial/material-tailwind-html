@@ -3,12 +3,10 @@ const plugin = require('tailwindcss/plugin');
 module.exports = {
   mode: 'jit',
   content: [
-    './public/**/*.{html,js}',
-    './pages/**/*.{html,js}',
-    './components/**/*.{html,js}',
+    './build/**/*.{html,js}'
   ],
   presets: [],
-  darkMode: 'media', // or 'class'
+  darkMode: 'class',
   theme: {
     screens: {
       sm: '540px',
@@ -251,7 +249,7 @@ module.exports = {
       200: '2',
     },
     container: {
-      padding: '2rem',
+      padding: '1.5rem',
     },
     content: {
       none: 'none',
@@ -930,6 +928,9 @@ module.exports = {
       50: '50',
     },
   },
+  variants: {
+    display: ['responsive', 'dropdown']
+  },
   variantOrder: [
     'first',
     'last',
@@ -949,17 +950,21 @@ module.exports = {
     'disabled',
   ],
   plugins: [
-
+    require('tailwindcss-dropdown'),
     plugin(function({ addUtilities, addComponents, e, prefix, config }) {
       // Add your custom styles here
   
     }),
     plugin(function({ addComponents }) {
       const typography = {
-        'h1,h2,h3,h4': {
-          'font-weight': '600',
+        'h1,h2,h3,h4,h5,h6': {
+          'font-weight': '400',
           'font-family': 'Roboto Slab,sans-serif',
           'letter-spacing': '-.05rem',
+          'margin-bottom': '.5rem',
+          'color': '#344767'
+        },
+        'a': {
           'color': '#344767'
         },
         'h1,.h1': {
@@ -1004,28 +1009,215 @@ module.exports = {
           'fontSize': '.75rem',
           'color': '#fff',
           'display': 'inline-block',
-          'lineHeight': '1.45',
+          'lineHeight': '1.667',
           'textAlign': 'center',
           'verticalAlign': 'middle',
           'transition': 'all .15s ease-in',
-          'cursor': 'pointer'
+          'cursor': 'pointer',
+          'margin-bottom': '1rem',
+          'letter-spacing': '0',
+          'background-size': '150%',
+          'background-position-x': '25%',
+          'position': 'relative',
+          'overflow': 'hidden',
+          'text-transform': 'uppercase'
         },
         '.button-primary': {
            'box-shadow': '0 3px 3px 0 rgba(233, 30, 99, .15), 0 3px 1px -2px rgba(233, 30, 99, .2), 0 1px 5px 0 rgba(233, 30, 99, .15)',
-           'background-color': '#e91e63'
+           'background-color': '#e91e63',
+           '&:hover': {
+            'box-shadow': '0 14px 26px -12px rgba(233, 30, 99, .4), 0 4px 23px 0 rgba(233, 30, 99, .15), 0 8px 10px -5px rgba(233, 30, 99, .2)'
+           }
+        },
+        '.button-secondary': {
+          'box-shadow': '0 3px 3px 0 rgba(70, 69, 68, .15), 0 3px 1px -2px rgba(104, 102, 102, .2), 0 1px 5px 0 rgba(143, 143, 143, .15)',
+          'background-color': '#7b809a',
+          '&:hover': {
+            'box-shadow': '0 14px 26px -12px rgba(70, 69, 68, .4), 0 4px 23px 0 rgba(104, 102, 102, .15), 0 8px 10px -5px rgba(143, 143, 143, .2)'
+           }
         },
         '.button-info': {
           'box-shadow': '0 3px 3px 0 rgba(26, 115, 232, .15), 0 3px 1px -2px rgba(26, 115, 232, .2), 0 1px 5px 0 rgba(26, 115, 232, .15)',
-          'background-color': '#1a73e8'
-       },
-      }  
-      const card = {
-        '.card': {
-          'background-color': '#fff',
-          'border-radius': '.75rem',
-          'box-shadow': '0 4px 6px -1px rgba(0, 0, 0, .1), 0 2px 4px -1px rgba(0, 0, 0, .06);',
+          'background-color': '#1a73e8',
+          '&:hover': {
+            'box-shadow': '0 14px 26px -12px rgba(26, 115, 232, .4), 0 4px 23px 0 rgba(26, 115, 232, .15), 0 8px 10px -5px rgba(26, 115, 232, .2)'
+          }
+        },
+        '.button-success': {
+          'box-shadow': '0 3px 3px 0 rgba(76, 175, 80, .15), 0 3px 1px -2px rgba(76, 175, 80, .2), 0 1px 5px 0 rgba(76, 175, 80, .15)',
+          'background-color': '#4caf50',
+          '&:hover': {
+            'box-shadow': '0 14px 26px -12px rgba(76, 175, 80, .4), 0 4px 23px 0 rgba(76, 175, 80, .15), 0 8px 10px -5px rgba(76, 175, 80, .2)'
+          }
+        },
+        '.button-warning': {
+          'box-shadow': '0 3px 3px 0 rgba(251, 140, 0, .15), 0 3px 1px -2px rgba(251, 140, 0, .2), 0 1px 5px 0 rgba(251, 140, 0, .15)',
+          'background-color': '#fb8c00',
+          '&:hover': {
+            'box-shadow': '0 14px 26px -12px rgba(251, 140, 0, .4), 0 4px 23px 0 rgba(251, 140, 0, .15), 0 8px 10px -5px rgba(251, 140, 0, .2)'
+          }
+        },
+        '.button-danger': {
+          'box-shadow': '0 3px 3px 0 rgba(244, 67, 53, .15), 0 3px 1px -2px rgba(244, 67, 53, .2), 0 1px 5px 0 rgba(244, 67, 53, .15)',
+          'background-color': '#f44335',
+          '&:hover': {
+            'box-shadow': '0 14px 26px -12px rgba(244, 67, 53, .4), 0 4px 23px 0 rgba(244, 67, 53, .15), 0 8px 10px -5px rgba(244, 67, 53, .2)'
+          }
+        },
+        '.button-dark': {
+          'box-shadow': '0 3px 3px 0 rgba(52, 71, 103, .15), 0 3px 1px -2px rgba(52, 71, 103, .20), 0 1px 5px 0 rgba(52, 71, 103, .15)',
+          'background-color': '#344767',
+          '&:hover': {
+            'box-shadow': '0 14px 26px -12px rgba(52, 71, 103, .4), 0 4px 23px 0 rgba(52, 71, 103, .15), 0 8px 10px -5px rgba(52, 71, 103, .2)'
+          }
+        },
+        '.button-light': {
+          'box-shadow': '0 3px 3px 0 rgba(240, 242, 245, .15), 0 3px 1px -2px rgba(240, 242, 245, .2), 0 1px 5px 0 rgba(240, 242, 245, .15)',
+          'background-color': '#f0f2f5',
+          'color': '#495057',
+          '&:hover': {
+            'box-shadow': '0 14px 26px -12px rgba(240, 242, 245, .4), 0 4px 23px 0 rgba(240, 242, 245, .15), 0 8px 10px -5px rgba(240, 242, 245, .2)'
+          }
         },
 
+      }  
+      const gradients = {
+        '.bg-gradient-primary': {
+          'background-image': 'linear-gradient(195deg, #ec407a, #d81b60)',
+          '&.button': {
+            'box-shadow': '0 3px 3px 0 rgba(233, 30, 99, .15), 0 3px 1px -2px rgba(233, 30, 99, .2), 0 1px 5px 0 rgba(233, 30, 99, .15)',
+
+            '&:hover': {
+              'box-shadow': '0 14px 26px -12px rgba(233, 30, 99, .4), 0 4px 23px 0 rgba(233, 30, 99, .15), 0 8px 10px -5px rgba(233, 30, 99, .2)'
+            }
+          }
+        },
+        '.bg-gradient-secondary': {
+          'background-image': 'linear-gradient(195deg, #747b8a, #495361)',
+          '&.button': {
+            'box-shadow': '0 3px 3px 0 rgba(70, 69, 68, .15), 0 3px 1px -2px rgba(104, 102, 102, .2), 0 1px 5px 0 rgba(143, 143, 143, .15)',
+
+            '&:hover': {
+              'box-shadow': '0 14px 26px -12px rgba(70, 69, 68, .4), 0 4px 23px 0 rgba(104, 102, 102, .15), 0 8px 10px -5px rgba(143, 143, 143, .2)'
+            }
+          }
+        },
+        '.bg-gradient-info': {
+          'background-image': 'linear-gradient(195deg, #49a3f1, #1a73e8)',
+          '&.button': {
+            'box-shadow': '0 3px 3px 0 rgba(26, 115, 232, .15), 0 3px 1px -2px rgba(26, 115, 232, .2), 0 1px 5px 0 rgba(26, 115, 232, .15)',
+
+            '&:hover': {
+              'box-shadow': '0 14px 26px -12px rgba(26, 115, 232, .4), 0 4px 23px 0 rgba(26, 115, 232, .15), 0 8px 10px -5px rgba(26, 115, 232, .2)'
+            }
+          }
+        },
+        '.bg-gradient-success': {
+          'background-image': 'linear-gradient(195deg, #66bb6a, #43a047)',
+          '&.button': {
+            'box-shadow': '0 3px 3px 0 rgba(76, 175, 80, .15), 0 3px 1px -2px rgba(76, 175, 80, .2), 0 1px 5px 0 rgba(76, 175, 80, .15)',
+
+            '&:hover': {
+              'box-shadow': '0 14px 26px -12px rgba(76, 175, 80, .4), 0 4px 23px 0 rgba(76, 175, 80, .15), 0 8px 10px -5px rgba(76, 175, 80, .2)'
+            }
+          }
+        },
+        '.bg-gradient-warning': {
+          'background-image': 'linear-gradient(195deg, #ffa726, #fb8c00)',
+          '&.button': {
+            'box-shadow': '0 3px 3px 0 rgba(251, 140, 0, .15), 0 3px 1px -2px rgba(251, 140, 0, .2), 0 1px 5px 0 rgba(251, 140, 0, .15)',
+
+            '&:hover': {
+              'box-shadow': '0 14px 26px -12px rgba(251, 140, 0, .4), 0 4px 23px 0 rgba(251, 140, 0, .15), 0 8px 10px -5px rgba(251, 140, 0, .2)'
+            }
+          }
+        },
+        '.bg-gradient-danger': {
+          'background-image': 'linear-gradient(195deg, #ef5350, #e53935)',
+          '&.button': {
+            'box-shadow': '0 3px 3px 0 rgba(244, 67, 53, .15), 0 3px 1px -2px rgba(244, 67, 53, .2), 0 1px 5px 0 rgba(244, 67, 53, .15)',
+
+            '&:hover': {
+              'box-shadow': '0 14px 26px -12px rgba(244, 67, 53, .4), 0 4px 23px 0 rgba(244, 67, 53, .15), 0 8px 10px -5px rgba(244, 67, 53, .2)'
+            }
+          }
+        },
+        '.bg-gradient-dark': {
+          'background-image': 'linear-gradient(195deg, #42424a, #191919)',
+          '&.button': {
+            'box-shadow': '0 3px 3px 0 rgba(52, 71, 103, .15), 0 3px 1px -2px rgba(52, 71, 103, .20), 0 1px 5px 0 rgba(52, 71, 103, .15)',
+
+            '&:hover': {
+              'box-shadow': '0 14px 26px -12px rgba(52, 71, 103, .4), 0 4px 23px 0 rgba(52, 71, 103, .15), 0 8px 10px -5px rgba(52, 71, 103, .2)'
+            }
+          }
+        },
+        '.bg-gradient-light': {
+          'background-image': 'linear-gradient(195deg, #ebeff4, #ced4da)',
+          'color': '#495057',
+          '&.button': {
+            'box-shadow': '0 3px 3px 0 rgba(240, 242, 245, .15), 0 3px 1px -2px rgba(240, 242, 245, .2), 0 1px 5px 0 rgba(240, 242, 245, .15)',
+
+            '&:hover': {
+              'box-shadow': '0 14px 26px -12px rgba(240, 242, 245, .4), 0 4px 23px 0 rgba(240, 242, 245, .15), 0 8px 10px -5px rgba(240, 242, 245, .2)'
+            }
+          }
+        }
+      }
+      const card = {
+        '.card': {
+          'display': 'flex',
+          'flex-direction': 'column',
+          'word-wrap': 'break-word',
+          'background-color': '#fff',
+          'background-clip': 'border-box',
+          'border-radius': '.75rem',
+          'box-shadow': '0 4px 6px -1px rgba(0, 0, 0, .1), 0 2px 4px -1px rgba(0, 0, 0, .06);',
+
+          '.card-header': {
+            'transform': 'translateZ(0)',
+            'transition': 'all .3s cubic-bezier(.34,1.61,.7,1)',
+
+            '.img-fluid': {
+              'border-radius': '.5rem',
+            }
+          },
+          '.card-body': {
+            'padding': '1.5rem',
+            'flex': '1 1 auto',
+            'color': '#7b809a'
+          },
+          '.card-footer': {
+            'padding': '1.5rem',
+            'background-color': 'transparent',
+            'color': '#7b809a'
+          }
+        },
+        '.card[data-animation="true"]:hover': {
+          '.card-header': {
+            'transform': 'translate3d(0,-50px,0)'
+          }
+        },
+        '.colored-shadow': {
+          'transform': 'scale(.94)',
+          'top': '3.5%',
+          'filter': 'blur(12px)',
+          'position': 'absolute',
+          'left': '0',
+          'width': '100%',
+          'height': '100%',
+          'background-size': 'cover',
+          'z-index': '-1'
+        }
+      }
+      const alerts = {
+        '.alert': {
+          'position': 'relative',
+          'padding': '1rem',
+          'margin-bottom': '1rem',
+          'border': '0 solid transparent',
+          'border-radius': '0.375rem'
+        }
       }
       const navbar = {
         '.navbar': {
@@ -1044,12 +1236,126 @@ module.exports = {
           'display': 'flex'
         }
       }
+      const dropdown = {
+        '.dropdown': {
+
+        }
+      }
+      const misc = {
+        '.blurr': {
+          'box-shadow': 'inset 0 0 2px #fefefed1',
+          '-webkit-backdrop-filter': 'saturate(200%) blur(30px)',
+          'backdrop-filter': 'saturate(200%) blur(30px)',
+          'background-color': 'hsla(0,0%,100%,.8)'
+        },
+        '.shadow-blur': {
+          'box-shadow': 'inset 0 0 1px 1px hsla(0,0%,100%,.9),0 20px 27px 0 rgba(0,0,0,.05)',
+        }
+      }
+      const icon = {
+        '.icon': {
+          'width': '48px',
+          'height': '48px',
+          'background-position': '50%',
+          'border-radius': '0.5rem',
+
+          'i': {
+            'color': '#fff',
+            'top': '11px',
+            'position': 'relative'
+          },
+          '&.icon-xl': {
+            'width': '100px',
+            'height': '100px',
+            'i': {
+              'top': '35%',
+              'font-size': '2.1rem'
+            }
+          },
+          '&.icon-lg': {
+            'width': '64px',
+            'height': '64px',
+            'i': {
+              'top': '31%',
+              'font-size': '1.5rem'
+            }
+          },
+          '&.icon-sm': {
+            'width': '32px',
+            'height': '32px',
+            'i': {
+              'top': '9px',
+              'font-size': '.875rem'
+            }
+          },
+          '&.icon-xs': {
+            'width': '24px',
+            'height': '24px',
+            'i': {
+              'top': '-1px',
+              'font-size': '.75rem'
+            }
+          }
+        }
+      }
+
+      const badges = {
+        '.badge': {
+          'display': 'inline-block',
+          'padding': '0.55em 0.9em',
+          'font-size': '.75em',
+          'font-weight': '600',
+          'line-height': '1',
+          'color': '#fff',
+          'text-align': 'center',
+          'white-space': 'nowrap',
+          'vertical-align': 'baseline',
+          'border-radius': '0.45rem',
+          'text-transform': 'uppercase',
+
+          '&.badge-md': {
+            'padding': '0.65em 1em'
+          },
+          '&.badge-lg': {
+            'padding': '.85em 1.375em'
+          },
+
+          '&.badge-primary': {
+            'color': '#cc084b',
+            'background-color': '#f8b3ca'
+          },
+          '&.badge-secondary': {
+            'color': '#6c757d',
+            'background-color': '#d7d9e1'
+          },
+          '&.badge-info': {
+            'color': '#095bc6',
+            'background-color': '#aecef7'
+          },
+          '&.badge-success': {
+            'color': '#339537',
+            'background-color': '#bce2be'
+          },
+          '&.badge-warning': {
+            'color': '#c87000',
+            'background-color': '#ffd59f'
+          },
+          '&.badge-danger': {
+            'color': '#f61200',
+            'background-color': '#fcd3d0'
+          }
+        }
+      }
   
       addComponents(typography),
+      addComponents(alerts),
+      addComponents(badges),
       addComponents(buttons),
+      addComponents(gradients),
       addComponents(card),
-      addComponents(navbar)
-
+      addComponents(navbar),
+      addComponents(icon),
+      addComponents(misc)
     })
   ]
 }
