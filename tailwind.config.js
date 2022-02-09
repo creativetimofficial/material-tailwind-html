@@ -3,7 +3,8 @@ const plugin = require('tailwindcss/plugin');
 module.exports = {
   mode: 'jit',
   content: [
-    './build/**/*.{html,js}'
+    './build/**/*.{html,js}',
+    './assets/**/*.{css,js}'
   ],
   presets: [],
   darkMode: 'class',
@@ -951,12 +952,13 @@ module.exports = {
   ],
   plugins: [
     require('tailwindcss-dropdown'),
-    plugin(function({ addUtilities, addComponents, e, prefix, config }) {
-      // Add your custom styles here
   
-    }),
     plugin(function({ addComponents }) {
       const typography = {
+        '*': {
+        '-webkit-font-smoothing': 'antialiased',
+        '-moz-osx-font-smoothing': 'grayscale',
+        },
         'h1,h2,h3,h4,h5,h6': {
           'font-weight': '400',
           'font-family': 'Roboto Slab,sans-serif',
@@ -989,7 +991,8 @@ module.exports = {
         },
         'h6,.h6': {
           'font-size': '1rem',
-          'line-height': '1.625'
+          'line-height': '1.625',
+          'text-transform': 'uppercase'
         },
         '.lead': {
           'font-size': '1.25rem',
@@ -1009,7 +1012,7 @@ module.exports = {
           'fontSize': '.75rem',
           'color': '#fff',
           'display': 'inline-block',
-          'lineHeight': '1.667',
+          'lineHeight': '1.45',
           'textAlign': 'center',
           'verticalAlign': 'middle',
           'transition': 'all .15s ease-in',
@@ -1216,7 +1219,14 @@ module.exports = {
           'padding': '1rem',
           'margin-bottom': '1rem',
           'border': '0 solid transparent',
-          'border-radius': '0.375rem'
+          'border-radius': '0.375rem',
+          'line-height': '1.25rem',
+          'opacity': '1',
+          'transition': 'opacity .15s linear',
+
+          '&.hide': {
+            'opacity': '0'
+          }
         }
       }
       const navbar = {
@@ -1346,6 +1356,182 @@ module.exports = {
           }
         }
       }
+
+      const modal = {
+        '.modal': {
+          'position': 'fixed',
+          'top': '0',
+          'left': '0',
+          'z-index': '1050',
+          'display': 'none',
+          'width': '100%',
+          'height': '100%',
+          'overflow-x': 'hidden',
+          'overflow-y': 'auto',
+          'outline': '0',
+          'opacity': '0',
+          'transition': 'opacity .15s linear',
+
+          '.modal-dialog': {
+            'transition': 'transform .3s ease-out',
+            'transform': 'translateY(-50px)',
+            'min-height': 'calc(100% - 5rem)',
+            'max-width': '500px',
+            'margin': '1.75rem auto',
+            'display': 'flex',
+            'align-items': 'center',
+            'position': 'relative',
+            'width': 'auto',
+            'pointer-events': 'none'
+          },
+
+          '&.open': {
+            'display': 'block',
+            'opacity': '1',
+
+            '.modal-dialog': {
+              'transform': 'none',
+              'z-index': '1212'
+            }
+          },
+
+          '.modal-overlay': {
+            'position': 'fixed',
+            'top': '0',
+            'left': '0',
+            'width': '100vw',
+            'height': '100vh',
+            'z-index': '1200',
+            'background-color': 'rgba(0,0,0,0.5)',
+            'transition': 'opacity .15s linear'
+          },
+
+          '.modal-content': {
+            'position': 'relative',
+            'display': 'flex',
+            'flex-direction': 'column',
+            'width': '100%',
+            'pointer-events': 'auto',
+            'background-color': '#fff',
+            'background-color': '#fff',
+            'background-clip': 'padding-box',
+            'border': 'none',
+            'border-radius': '0.4rem',
+            'box-shadow': '0 27px 24px 0 rgba(0, 0, 0, .2), 0 40px 77px 0 rgba(0, 0, 0, .22)',
+            'outline': '0',
+            'z-index': '1300'
+          },
+
+          '.modal-header': {
+            'display': 'flex',
+            'flex-shrink': '0',
+            'align-items': 'center',
+            'justify-content': 'space-between',
+            'padding': '1rem',
+            'border-bottom': '1px solid #dee2e6',
+            'border-top-left-radius': 'calc(0.5rem - 1px)',
+            'border-top-right-radius': 'calc(0.5rem - 1px)',
+
+            '.button-close': {
+              'box-sizing': 'content-box',
+              'padding': '0.25em',
+
+              'i': {
+                'color': '#344767',
+              }
+            }
+          },
+
+          '.modal-body': {
+            'position': 'relative',
+            'flex': '1 1 auto',
+            'padding': '1rem'
+          },
+
+          '.modal-footer': {
+            'display': 'flex',
+            'flex-wrap': 'wrap',
+            'flex-shrink': '0',
+            'align-items': 'center',
+            'justify-content': 'flex-end',
+            'padding': '0.75rem',
+            'border-top': '1px solid #dee2e6',
+            'border-bottom-right-radius': 'calc(0.5rem - 1px)',
+            'border-bottom-left-radius': 'calc(0.5rem - 1px)'
+          }
+
+        }
+      }
+      
+      const inputs = {
+        '.form-control': {
+          'display': 'block',
+          'width': '100%',
+          'padding': '0.5rem 0',
+          'font-size': '.875rem',
+          'font-weight': '400',
+          'line-height': '1.15rem',
+          'color': '#495057',
+          'background-color': 'transparent',
+          'background-clip': 'padding-box',
+          'border': '1px solid #d2d6da',
+          'appearance': 'none',
+          'border-radius': '0.375rem',
+          'transition': '.2s ease'
+        },
+
+        '.form-label,label': {
+          'font-size': '.875rem',
+          'font-weight': '400',
+          'margin-bottom': '0.5rem',
+          'color': '#7b809a',
+          'position': 'absolute',
+          'margin-left': '0',
+          'transition': 'all .2s ease',
+        },
+
+        '.input-group': {
+          'position': 'relative',
+          'display': 'flex',
+          'flex-wrap': 'wrap',
+          'align-items': 'stretch',
+          'width': '100%',
+          'transition': '.2s ease',
+          'border': 'none',
+
+          '&.input-group-outline': {
+            '.form-label': {
+              'display': 'flex',
+              'line-height': '3.925',
+              'top': '-0.375rem',
+              'margin-bottom': '0'
+            },
+            'form-control': {
+              'background': 'none',
+              'border': '1px solid #d2d6da',
+              'border-radius': '0.375rem',
+              'border-top-left-radius': '0.375rem',
+              'border-bottom-left-radius': '0.375rem',
+              'padding': '0.625rem 0.75rem'
+            }
+          },
+
+          '&.input-group-dynamic,&.input-group-static,': {
+            '.form-control': {
+              'border-radius': '0',
+              'border': '0',
+              'background': 'no-repeat bottom,50% calc(100% - 1px)',
+              'background-image': 'linear-gradient(0deg,#e91e63 2px,rgba(156,39,176,0) 0),linear-gradient(0deg,#d2d2d2 1px,hsla(0,0%,82%,0) 0)',
+              'background-size': '0 100%,100% 100%',
+              'transition': '.2s ease'
+            },
+            'form-label': {
+              'top': '0.6125rem',
+
+            }
+          }
+        }
+      } 
   
       addComponents(typography),
       addComponents(alerts),
@@ -1355,7 +1541,9 @@ module.exports = {
       addComponents(card),
       addComponents(navbar),
       addComponents(icon),
-      addComponents(misc)
+      addComponents(misc),
+      addComponents(modal),
+      addComponents(inputs)
     })
   ]
 }
