@@ -10,7 +10,9 @@
 /coverage
 
 # production
-/build
+/build/components
+/build/index.html
+/build/styles.css
 
 # misc
 .DS_Store
