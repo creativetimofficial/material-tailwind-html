@@ -951,7 +951,6 @@ module.exports = {
     'disabled',
   ],
   plugins: [
-    require('tailwindcss-dropdown'),
   
     plugin(function({ addComponents }) {
       const typography = {
@@ -1225,7 +1224,8 @@ module.exports = {
           'transition': 'opacity .15s linear',
 
           '&.hide': {
-            'opacity': '0'
+            'opacity': '0',
+            'display': 'none'
           }
         }
       }
@@ -1253,7 +1253,6 @@ module.exports = {
           'opacity': '0',
           'transform-origin': '0 0',
           'inset': '0 auto auto 0',
-          'margin-top': '2.8125rem',
           'pointer-events': 'none',
           'transform': 'scale(.95)',
           '-webkit-backface-visibility': 'hidden',
@@ -1275,7 +1274,7 @@ module.exports = {
           'border': '0 solid transparent',
           'border-radius': '.375rem',
 
-          ':before': {
+          '&::before': {
             'font-family': 'FontAwesome',
             'content': '"\f0d8"',
             'position': 'absolute',
@@ -1284,7 +1283,16 @@ module.exports = {
             'right': 'auto',
             'font-size': '1.375',
             'color': '#fff',
-            'transition': 'top .35s ease'
+            'transition': 'top .35s ease',
+            'display': 'block',
+            'clear': 'both',
+            'box-sizing': 'border-box'
+          },
+
+          '&.dropdown-end': {
+            'right': '0',
+            'left': 'auto'
+          }
         },
 
         '.dropdown': {
@@ -1294,11 +1302,10 @@ module.exports = {
             '.dropdown-menu': {
               'opacity': '1',
               'pointer-events': 'auto',
-              'visibility': 'visible',
               'transform': 'scale(1)',
               'margin-top': '2.8125rem',
 
-              ':before': {
+              '&:before': {
                 'top': '-20px'
               }
             }
@@ -1325,7 +1332,7 @@ module.exports = {
           }
         }
       }
-    }
+
       const misc = {
         '.blurr': {
           'box-shadow': 'inset 0 0 2px #fefefed1',
@@ -1450,7 +1457,7 @@ module.exports = {
           '.modal-dialog': {
             'transition': 'transform .3s ease-out',
             'transform': 'translateY(-50px)',
-            'min-height': 'calc(100% - 5rem)',
+            'min-height': 'calc(100% - 15rem)',
             'max-width': '500px',
             'margin': '1.75rem auto',
             'display': 'flex',
@@ -1513,7 +1520,7 @@ module.exports = {
 
               'i': {
                 'color': '#344767',
-                'font-size': '0.75rem'
+                'font-size': '.875rem'
               }
             }
           },
@@ -1553,7 +1560,15 @@ module.exports = {
           'border': '1px solid #d2d6da',
           'appearance': 'none',
           'border-radius': '0.375rem',
-          'transition': '.2s ease'
+          'transition': '.2s ease',
+
+          '&:focus-visible': {
+            'outline': 'none'
+          }
+        },
+
+        '.form-label': {
+          'position': 'absolute'
         },
 
         '.form-label,label': {
@@ -1561,7 +1576,6 @@ module.exports = {
           'font-weight': '400',
           'margin-bottom': '0.5rem',
           'color': '#7b809a',
-          'position': 'absolute',
           'margin-left': '0',
           'transition': 'all .2s ease',
         },
@@ -1580,15 +1594,45 @@ module.exports = {
               'display': 'flex',
               'line-height': '3.925',
               'top': '-0.375rem',
-              'margin-bottom': '0'
+              'margin-bottom': '0',
+
+              '&:before,&:after': {
+                'content': '""',
+                'border-top': '1px solid',
+                'border-top-color': '#d2d6da',
+                'pointer-events': 'none',
+                'margin-top': '0.375rem',
+                'box-sizing': 'border-box',
+                'display': 'block',
+                'height': '0.5rem',
+                'width': '0.625rem',
+                'border-width': '1px 0 0',
+                'border-color': 'transparent'
+              },
+
+              '&:before': {
+                'margin-right': '4px',
+                'border-left': '1px solid transparent',
+                'border-radius': '6px 0'
+              },
+
+              '&:after': {
+                'flex-grow': '1',
+                'margin-left': '4px',
+                'border-right': '1px solid transparent',
+                'border-radius': '0 6px'
+              }
             },
-            'form-control': {
+
+            '.form-control': {
               'background': 'none',
               'border': '1px solid #d2d6da',
               'border-radius': '0.375rem',
               'border-top-left-radius': '0.375rem',
               'border-bottom-left-radius': '0.375rem',
-              'padding': '0.625rem 0.75rem'
+              'padding': '0.625rem 0.75rem',
+              'line-height': '1.25rem',
+              'z-index': '20'
             }
           },
 
@@ -1599,15 +1643,99 @@ module.exports = {
               'background': 'no-repeat bottom,50% calc(100% - 1px)',
               'background-image': 'linear-gradient(0deg,#e91e63 2px,rgba(156,39,176,0) 0),linear-gradient(0deg,#d2d2d2 1px,hsla(0,0%,82%,0) 0)',
               'background-size': '0 100%,100% 100%',
-              'transition': '.2s ease'
+              'transition': '.2s ease',
             },
-            'form-label': {
-              'top': '0.6125rem',
-
+            '.form-label': {
+              'top': '0.4rem'
             }
+          },
+
+          '&.input-group-static': {
+            'label': {
+              'margin-bottom': '0'
+            },
+          },
+
+          '&.focused,&.is-filled': {
+            '.form-label': {
+              'width':' 100%',
+              'height': '100%',
+              'font-size': '.6875rem',
+              'color': '#e91e63',
+              'display': 'flex',
+              'line-height': '1.25',
+
+              '&:before': {
+                'opacity': '1',
+                'border-top-color': '#e91e63',
+                'box-shadow': 'inset 0 1px #e91e63'
+              },
+
+              '&:after': {
+                'opacity': '1',
+                'border-top-color': '#e91e63',
+                'box-shadow': 'inset 0 1px #e91e63'
+              }
+            },
+
+            '&.input-group-outline': {
+              '.form-label+.form-control': {
+                'border-color': '#e91e63',
+                'border-top-color': 'transparent',
+                'box-shadow': 'inset 1px 0 #e91e63, inset -1px 0 #e91e63, inset 0 -1px #e91e63'
+              },
+            },
+
+            '&.input-group-dynamic': {
+              '.form-label': {
+                'top': '-0.7rem'
+              }
+            },
+
+            '&.input-group-static': {
+              'label': {
+                'color': '#e91e63'
+              }
+            },
+
+            '.form-control': {
+              'background-size': '100% 100%,100% 100%'
+            }
+          },
+
+          '&:focus-visible': {
+            'outline': 'none'
           }
         }
       } 
+
+      const checkbox = {
+        '.form-check': {
+          'display': 'flex',
+          'min-height': 'auto',
+          'margin-bottom': '.125rem',
+
+          '.form-check-input': {
+            'width': '1.23rem',
+            'height': '1.23rem',
+            'background-color': '#fff',
+            'background-repeat': 'no-repeat',
+            'background-position': '50%',
+            'background-size': 'contain',
+            'border': 'none',
+            'transition': 'background-color .25s ease,border-color .25s ease,background-position .15s ease-in-out,opacity .15s ease-out,box-shadow .15s ease-in-out'
+          },
+
+          'div[type="checkbox"]': {
+            'border': '1px solid #cbd3da',
+            'position': 'relative',
+            'background-image': 'none',
+            'border-radius': '0.35rem',
+            'cursor': 'pointer',
+            'margin-right': '7px',
+          }
+        }
+      }
   
       addComponents(typography),
       addComponents(alerts),
@@ -1620,7 +1748,8 @@ module.exports = {
       addComponents(icon),
       addComponents(misc),
       addComponents(modal),
-      addComponents(inputs)
+      addComponents(inputs),
+      addComponents(checkbox)
     })
   ]
 }
