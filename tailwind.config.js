@@ -1229,6 +1229,63 @@ module.exports = {
           }
         }
       }
+
+      const avatars = {
+        '.avatar': {
+          'color': '#fff',
+          'position': 'relative',
+          'display': 'inline-flex',
+          'align-items': 'center',
+          'justify-content': 'center',
+          'font-size': '1rem',
+          'border-radius': '50rem',
+          'height': '48px',
+          'width': '48px',
+          'transition': 'all .2s ease-in-out',
+
+          'img': {
+            // 'border-radius': '50rem',
+          },
+
+          '&.avatar-xs': {
+            'width': '24px',
+            'height': '24px',
+            'font-size': '.75rem'
+          },
+          '&.avatar-sm': {
+            'width': '36px',
+            'height': '36px',
+            'font-size': '.875rem'
+          },
+          '&.avatar-lg': {
+            'width': '58px',
+            'height': '58px',
+            'font-size': '.875rem'
+          },
+          '&.avatar-xl': {
+            'width': '74px',
+            'height': '74px'
+          },
+        },
+
+        '.avatar-group': {
+          '.avatar': {
+            'position': 'relative',
+            'z-index': '2',
+            'border': '2px solid #fff',
+            'cursor': 'pointer',
+
+            '&+.avatar': {
+              'margin-left': '-1rem'
+            },
+
+            '&:hover': {
+              'z-index': '3'
+            }
+          }
+        }
+      }
+
       const navbar = {
         '.navbar': {
           'position': 'relative',
@@ -1273,6 +1330,7 @@ module.exports = {
           'background-clip': 'padding-box',
           'border': '0 solid transparent',
           'border-radius': '.375rem',
+          'margin-top': '2.8125rem',
 
           '&::before': {
             'font-family': 'FontAwesome',
@@ -1444,18 +1502,18 @@ module.exports = {
           'position': 'fixed',
           'top': '0',
           'left': '0',
-          'z-index': '1050',
-          'display': 'none',
+          'z-index': '0',
           'width': '100%',
           'height': '100%',
           'overflow-x': 'hidden',
           'overflow-y': 'auto',
           'outline': '0',
           'opacity': '0',
+          'visibility': 'hidden',
           'transition': 'opacity .15s linear',
 
           '.modal-dialog': {
-            'transition': 'transform .3s ease-out',
+            'transition': 'transform .15s ease-out',
             'transform': 'translateY(-50px)',
             'min-height': 'calc(100% - 15rem)',
             'max-width': '500px',
@@ -1468,8 +1526,9 @@ module.exports = {
           },
 
           '&.open': {
-            'display': 'block',
+            'visibility': 'visible',
             'opacity': '1',
+            'z-index': '1050',
 
             '.modal-dialog': {
               'transform': 'none',
@@ -1739,6 +1798,7 @@ module.exports = {
   
       addComponents(typography),
       addComponents(alerts),
+      addComponents(avatars),
       addComponents(badges),
       addComponents(buttons),
       addComponents(card),
