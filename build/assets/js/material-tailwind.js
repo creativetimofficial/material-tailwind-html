@@ -1,55 +1,3 @@
-
-
-// // Colored shadows for Avatars
-// if (document.querySelector('.blur-shadow-avatar')) {
-//   var shadowCards = document.querySelectorAll('.blur-shadow-avatar');
-//   var shadowCardsRounded = document.querySelectorAll('.blur-shadow-avatar.rounded-circle');
-
-//   if (shadowCardsRounded) {
-//     for (var i = 0; i < shadowCardsRounded.length; i++) {
-
-//       var div = document.createElement("DIV");
-//       shadowCardsRounded[i].parentElement.appendChild(div);
-//       div.classList.add('colored-shadow', 'rounded', 'start-0', 'end-0', 'mx-auto');
-
-//       var avatarClasses = ['avatar-xs', 'avatar-sm', 'avatar-lg', 'avatar-xl', 'avatar-xxl'];
-
-//       for (var k = 0; k < avatarClasses.length; k++) {
-//         if (shadowCardsRounded[i].firstElementChild.classList.contains(avatarClasses[k])) {
-//           div.classList.add(avatarClasses[k]);
-//         }
-//       }
-
-//       var currentSrc = shadowCardsRounded[i].children[0].getAttribute('src');
-//       var el = shadowCardsRounded[i].nextElementSibling;
-
-//       el.style.backgroundImage = 'url(' + currentSrc + ')';
-//     }
-//   }
-//   if (shadowCards) {
-
-//     for (var i = 0; i < shadowCards.length; i++) {
-
-//       var div = document.createElement("DIV");
-//       shadowCards[i].parentElement.appendChild(div);
-//       div.classList.add('colored-shadow', 'start-0', 'end-0', 'mx-auto');
-
-//       var avatarClasses = ['avatar-xs', 'avatar-sm', 'avatar-lg', 'avatar-xl', 'avatar-xxl'];
-
-//       for (var k = 0; k < avatarClasses.length; k++) {
-//         if (shadowCards[i].firstElementChild.classList.contains(avatarClasses[k])) {
-//           div.classList.add(avatarClasses[k]);
-//         }
-//       }
-
-//       var currentSrc = shadowCards[i].children[0].getAttribute('src');
-//       var el = shadowCards[i].nextElementSibling;
-
-//       el.style.backgroundImage = 'url(' + currentSrc + ')';
-//     }
-//   }
-// } 
-
 (function() {
 
   function ready(fn) {
@@ -133,6 +81,55 @@ window.onload = function() {
         var currentSrc = shadowCards[i].children[0].getAttribute('src');
         var el = shadowCards[i].nextElementSibling;
   
+        el.style.backgroundImage = 'url(' + currentSrc + ')';
+      }
+    }
+  }
+
+  // Colored shadows for Avatars
+  if (document.querySelector('.blur-shadow-avatar')) {
+    var shadowCards = document.querySelectorAll('.blur-shadow-avatar');
+    var shadowCardsRounded = document.querySelectorAll('.blur-shadow-avatar.rounded-full');
+
+    if (shadowCardsRounded) {
+      for (var i = 0; i < shadowCardsRounded.length; i++) {
+
+        var div = document.createElement("DIV");
+        shadowCardsRounded[i].parentElement.appendChild(div);
+        div.classList.add('colored-shadow', 'rounded-full', 'start-0', 'end-0', 'mx-auto');
+
+        var avatarClasses = ['avatar-xs', 'avatar-sm', 'avatar-lg', 'avatar-xl', 'avatar-xxl'];
+
+        for (var k = 0; k < avatarClasses.length; k++) {
+          if (shadowCardsRounded[i].firstElemenpartChild.classList.contains(avatarClasses[k])) {
+            div.classList.add(avatarClasses[k]);
+          }
+        }
+
+        var currentSrc = shadowCardsRounded[i].children[0].getAttribute('src');
+        var el = shadowCardsRounded[i].nextElementSibling;
+
+        el.style.backgroundImage = 'url(' + currentSrc + ')';
+      }
+    }
+    if (shadowCards) {
+      for (var i = 0; i < shadowCards.length; i++) {
+
+        var div = document.createElement("DIV");
+        shadowCards[i].parentElement.appendChild(div);
+        div.classList.add('colored-shadow', 'start-0', 'end-0', 'mx-auto');
+
+        var avatarClasses = ['avatar-xs', 'avatar-sm', 'avatar-lg', 'avatar-xl', 'avatar-xxl'];
+
+        for (var k = 0; k < avatarClasses.length; k++) {
+          if (shadowCards[i].firstElementChild.classList.contains(avatarClasses[k])) {
+            div.classList.add(avatarClasses[k]);
+          }
+        }
+
+        var currentSrc = shadowCards[i].children[0].getAttribute('src');
+        var el = shadowCards[i].nextElementSibling;
+
         el.style.backgroundImage = 'url(' + currentSrc + ')';
       }
     }
