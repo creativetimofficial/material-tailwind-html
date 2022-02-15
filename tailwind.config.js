@@ -133,6 +133,7 @@ module.exports = {
       ping: 'ping 1s cubic-bezier(0, 0, 0.2, 1) infinite',
       pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       bounce: 'bounce 1s infinite',
+      progress_bar: '1s linear infinite progress_stripe'
     },
     aspectRatio: {
       auto: 'auto',
@@ -576,6 +577,14 @@ module.exports = {
           animationTimingFunction: 'cubic-bezier(0,0,0.2,1)',
         },
       },
+
+      progress_stripe: {
+        '0%': { 
+          'background-position-x': '1rem'
+        }
+      }
+
+
     },
     letterSpacing: {
       tighter: '-0.05em',
@@ -1795,6 +1804,35 @@ module.exports = {
           }
         }
       }
+
+      const progress = {
+        '.progress': {
+          'overflow': 'visible',
+          'display': 'flex',
+          'height': '6px',
+          'font-size': '.75rem',
+          'background-color': '#e9ecef',
+          'border-radius': '.125rem',
+
+          '.progress-bar': {
+            'flex-direction': 'column',
+            'justify-content': 'center',
+            'color': '#fff',
+            'text-align': 'center',
+            'white-space': 'nowrap',
+            'background-color': '#e91e63',
+            'transition': 'width .6s ease',
+            'border-radius': '.125rem',
+
+            '&[striped]': {
+              'background-image': 'linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent)',
+              'background-size': '1rem 1rem',
+            },
+
+      
+          }
+        }
+      }
   
       addComponents(typography),
       addComponents(alerts),
@@ -1809,7 +1847,8 @@ module.exports = {
       addComponents(misc),
       addComponents(modal),
       addComponents(inputs),
-      addComponents(checkbox)
+      addComponents(checkbox),
+      addComponents(progress)
     })
   ]
 }
