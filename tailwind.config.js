@@ -1805,6 +1805,51 @@ module.exports = {
         }
       }
 
+      const pagination = {
+        '.pagination': {
+          'display': 'flex',
+          'padding-left': '0',
+          'list-style': 'none',
+
+          '.page-item': {
+            '.page-link,span': {
+              'display': 'flex',
+              'align-items': 'center',
+              'justify-content': 'center',
+              'color': '#7b809a',
+              'padding': '0',
+              'margin': '0 3px',
+              'border-radius': '50%',
+              'width': '36px',
+              'height': '36px',
+              'font-size': '.875rem'
+            },
+            
+            '&.active': {
+              '.page-link': {
+                'z-index': '3',
+                'color': '#fff',
+                'background-color': '#e91e63',
+                'border': 'none',
+                'box-shadow': '0 3px 5px -1px rgba(0, 0, 0, .09), 0 2px 3px -1px rgb(0, 0, 0, .07)'
+              }
+            }
+
+          },
+          '.page-link': {
+            'position': 'relative',
+            'background-color': '#fff',
+            'border': '1px solid #dee2e6',
+            'trasition': 'color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out',
+
+            '&:hover': {
+              'z-index': '2',
+              'background-color': '#e9ecef',
+            }
+          }
+        }
+      }
+
       const progress = {
         '.progress': {
           'overflow': 'visible',
@@ -1848,6 +1893,7 @@ module.exports = {
       addComponents(modal),
       addComponents(inputs),
       addComponents(checkbox),
+      addComponents(pagination),
       addComponents(progress)
     })
   ]
