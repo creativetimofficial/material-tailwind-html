@@ -10,7 +10,7 @@
 /coverage
 
 # production
-/build/components
+
 /build/index.html
 /build/styles.css
 
