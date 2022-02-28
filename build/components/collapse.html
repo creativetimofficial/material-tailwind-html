@@ -1,0 +1,199 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Material Tailwind HTML</title>
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossOrigin="anonymous"/>
+    <!-- Product Styling -->
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <div>
+      <div class="container mx-auto">
+        <nav class="navbar mt-5">
+          <div>
+            <h1 class="text-sm font-bold p-3 mb-0">
+              <a href="javascript:;">Material Tailwind HTML</a>
+            </h1>
+          </div>
+          <div class="flex ml-auto">
+            <ul class="flex items-center">
+              <li>
+                <a class="nav-link" href="javascript:;"><span>Docs</span></a>
+              </li>
+              <li>
+                <a class="nav-link" href="javascript:;"><span>Components</span></a>
+              </li>
+              <li>
+                <a class="nav-link" href="javascript:;"><span>Templates</span></a>
+              </li>
+              <li>
+                <a class="nav-link" href="javascript:;"><span>Github</span></a>
+              </li>
+              <li>
+                <a class="nav-link" href="javascript:;"><span>Issues</span></a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <main class="mt-10">
+          <div class="flex flex-row">
+            <div class="basis-1/5 px-3">
+              <h5>Documentation</h5>
+              <ul class="list-none">
+                <li class="py-1 transition-colors duration-200 relative block hover:text-gray-900 text-gray-700 dark:text-gray-300 dark:hover:text-white">
+                  <i class="material-icons text-sm opacity-60">dashboard</i>
+                  Theme
+                </li>
+                <li class="py-1 transition-colors duration-200 relative block hover:text-gray-900 text-gray-700 dark:text-gray-300 dark:hover:text-white">
+                  <i class="material-icons text-sm opacity-60">dashboard</i>
+                  Layout
+                </li>
+                <li class="py-1 transition-colors duration-200 relative block hover:text-gray-900 text-gray-700 dark:text-gray-300 dark:hover:text-white">
+                  <i class="material-icons text-sm opacity-60">dashboard</i>
+                  Components
+                  <ul>
+                    <li>
+                      <a class="nav-link" href="./alerts.html"><span>Alerts</span></a>
+                    </li>
+                    <li>
+                      <a class="nav-link" href="./avatars.html"><span>Avatars</span></a>
+                    </li> 
+                    <li>
+                      <a class="nav-link" href="./badges.html"><span>Badges</span></a>
+                    </li> 
+                    <li>
+                      <a class="nav-link" href="./buttons.html"><span>Buttons</span></a>
+                    </li>
+                    <li>
+                      <a class="nav-link" href="./cards.html"><span>Cards</span></a>
+                    </li>
+                    <li>
+                      <a class="nav-link" href="./collapse.html"><span>Collapse</span></a>
+                    </li>
+                    <li>
+                      <a class="nav-link" href="./dropdown.html"><span>Dropdown</span></a>
+                    </li>
+                    <li>
+                      <a class="nav-link" href="./forms.html"><span>Forms</span></a>
+                    </li>
+                    <li>
+                      <a class="nav-link" href="./modal.html"><span>Modal</span></a>
+                    </li>
+                    <li>
+                      <a class="nav-link" href="./pagination.html"><span>Pagination</span></a>
+                    </li>
+                    <li>
+                      <a class="nav-link" href="./progress.html"><span>Progress</span></a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="basis-2/3 px-3">
+              <h1 id="buttons">Collapse</h1>
+              <h3 id="default">Accordion</h3>
+              <div class="my-6">
+                <h2>Frequently Asked Questions</h2>
+                <p>A lot of people don’t appreciate the moment until it’s passed. I'm not trying my hardest, and I'm not trying to do </p>
+              </div>
+              <div>
+                <div class="mb-3">
+                  <h5 class="mb-0">
+                    <button class="accordion-button border-bottom font-weight-bold" type="button" aria-expanded="true">
+                      How do I order?
+                      <i class="collapse-close fa fa-plus text-xs absolute right-0 mr-3"></i>
+                      <i class="collapse-open fa fa-minus text-xs absolute right-0 mr-3"></i>
+                    </button>
+                  </h5>
+                  <div class="collapse open">
+                    <div class="p-4 text-sm text-secondary opacity-80">
+                      We’re not always in the position that we want to be at. We’re constantly growing. We’re constantly making mistakes. We’re constantly trying to express ourselves and actualize our dreams. If you have the opportunity to play this game
+                      of life you need to appreciate every moment. A lot of people don’t appreciate the moment until it’s passed.
+                    </div>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <h5 class="mb-0">
+                    <button class="accordion-button border-bottom font-weight-bold collapsed" type="button" aria-expanded="false">
+                      How can i make the payment?
+                      <i class="collapse-close fa fa-plus text-xs absolute right-0 mr-3"></i>
+                      <i class="collapse-open fa fa-minus text-xs absolute right-0 mr-3"></i>
+                    </button>
+                  </h5>
+                  <div class="collapse">
+                    <div class="p-4 text-sm text-secondary opacity-80">
+                      It really matters and then like it really doesn’t matter. What matters is the people who are sparked by it. And the people who are like offended by it, it doesn’t matter. Because it's about motivating the doers. Because I’m here to follow my dreams and inspire other people to follow their dreams, too.
+                      <br>
+                      We’re not always in the position that we want to be at. We’re constantly growing. We’re constantly making mistakes. We’re constantly trying to express ourselves and actualize our dreams. If you have the opportunity to play this game of life you need to appreciate every moment. A lot of people don’t appreciate the moment until it’s passed.
+                    </div>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <h5 class="mb-0">
+                    <button class="accordion-button border-bottom font-weight-bold collapsed" type="button" aria-expanded="false">
+                      How much time does it take to receive the order?
+                      <i class="collapse-close fa fa-plus text-xs absolute right-0 mr-3"></i>
+                      <i class="collapse-open fa fa-minus text-xs absolute right-0 mr-3"></i>
+                    </button>
+                  </h5>
+                  <div class="collapse">
+                    <div class="p-4 text-sm text-secondary opacity-80">
+                      The time is now for it to be okay to be great. People in this world shun people for being great. For being a bright color. For standing out. But the time is now to be okay to be the greatest you. Would you believe in what you believe in, if you were the only one who believed it?
+                      If everything I did failed - which it doesn't, it actually succeeds - just the fact that I'm willing to fail is an inspiration. People are so scared to lose that they don't even try. Like, one thing people can't say is that I'm not trying, and I'm not trying my hardest, and I'm not trying to do the best way I know how.
+                    </div>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <h5 class="mb-0">
+                    <button class="accordion-button border-bottom font-weight-bold collapsed" type="button" aria-expanded="false">
+                      Can I resell the products?
+                      <i class="collapse-close fa fa-plus text-xs absolute right-0 mr-3"></i>
+                      <i class="collapse-open fa fa-minus text-xs absolute right-0 mr-3"></i>
+                    </button>
+                  </h5>
+                  <div class="collapse">
+                    <div class="p-4 text-sm text-secondary opacity-80">
+                      I always felt like I could do anything. That’s the main thing people are controlled by! Thoughts- their perception of themselves! They're slowed down by their perception of themselves. If you're taught you can’t do anything, you won’t do anything. I was taught I could do everything.
+                      <br><br>
+                      If everything I did failed - which it doesn't, it actually succeeds - just the fact that I'm willing to fail is an inspiration. People are so scared to lose that they don't even try. Like, one thing people can't say is that I'm not trying, and I'm not trying my hardest, and I'm not trying to do the best way I know how.
+                    </div>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <h5 class="mb-0">
+                    <button class="accordion-button border-bottom font-weight-bold collapsed" type="button" aria-expanded="false">
+                      Where do I find the shipping details?
+                      <i class="collapse-close fa fa-plus text-xs absolute right-0 mr-3"></i>
+                      <i class="collapse-open fa fa-minus text-xs absolute right-0 mr-3"></i>
+                    </button>
+                  </h5>
+                  <div class="collapse">
+                    <div class="p-4 text-sm text-secondary opacity-80">
+                      There’s nothing I really wanted to do in life that I wasn’t able to get good at. That’s my skill. I’m not really specifically talented at anything except for the ability to learn. That’s what I do. That’s what I’m here for. Don’t be afraid to be wrong because you can’t learn anything from a compliment.
+                      I always felt like I could do anything. That’s the main thing people are controlled by! Thoughts- their perception of themselves! They're slowed down by their perception of themselves. If you're taught you can’t do anything, you won’t do anything. I was taught I could do everything.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="basis-1/6 px-3">
+              <ul class="list-none">
+                <li href="#default">Default</li>
+                <li>Disabled</li>
+                <li>Sizes</li>
+                <li>Colors</li>
+                <li>Gradients</li>
+              </ul>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+  <script src="../../assets/js/material-tailwind.js"></script>
+</html>
