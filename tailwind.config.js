@@ -375,7 +375,7 @@ module.exports = {
     },
     fontSize: {
       xs: ['0.75rem', { lineHeight: '1rem' }],
-      sm: ['0.875rem', { lineHeight: '1.25rem' }],
+      sm: ['0.875rem', { lineHeight: '1.5rem' }],
       base: ['1rem', { lineHeight: '1.5rem' }],
       lg: ['1.125rem', { lineHeight: '1.75rem' }],
       xl: ['1.25rem', { lineHeight: '1.75rem' }],
@@ -1878,6 +1878,57 @@ module.exports = {
           }
         }
       }
+
+      const collapse = {
+        '.collapse.open': {
+          'opacity': '1',
+          'transition': 'all .35s ease'
+
+        },
+        '.collapse:not(.open)': {
+          'opacity': '0',
+          'height': '0',
+          'transition': 'all .35s ease'
+        },
+        '.accordion-button:not(.collapsed)': {
+          'color': '#344767',
+          'background-color': 'transparent',
+          'box-shadow': 'inset 0 0 0 rgba(0, 0, 0, .13)'
+        },
+        '.accordion-button': {
+          'position': 'relative',
+          'display': 'flex',
+          'align-items': 'center',
+          'width': '100%',
+          'padding': '1rem',
+          'font-size': 'inherit',
+          'color': '#7b809a',
+          'text-align': 'left',
+          'background-color': 'transparent',
+          'border': '0',
+          'border-radius': '0',
+          'border-bottom': '1px solid #dee2e6',
+          'overflow-anchor': 'none',
+          'transition': 'all .15s ease-in,border-radius .15s ease',
+
+          '&[aria-expanded="true"]': {
+            '.collapse-close': {
+              'display': 'none'
+            },
+            '.collapse-open': {
+              'display': 'block'
+            }
+          }, 
+          '&[aria-expanded="false"]': {
+            '.collapse-close': {
+              'display': 'block'
+            },
+            '.collapse-open': {
+              'display': 'none'
+            }
+          }
+        }
+      }
   
       addComponents(typography),
       addComponents(alerts),
@@ -1885,6 +1936,7 @@ module.exports = {
       addComponents(badges),
       addComponents(buttons),
       addComponents(card),
+      addComponents(collapse),
       addComponents(dropdown),
       addComponents(gradients),
       addComponents(navbar),
