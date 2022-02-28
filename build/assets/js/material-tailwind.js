@@ -171,4 +171,30 @@ window.onload = function() {
     }, false);
   }
 
+  // Collapse
+
+  var accordion = document.querySelectorAll('.accordion-button');
+
+  for(var i = 0; i < accordion.length; i++) {
+    accordion[i].addEventListener('click', openCurrentAccordion);
+  }
+
+  function openCurrentAccordion(e) {
+    for(var i = 0; i < accordion.length; i++) {
+
+      var parent = accordion[i].parentElement;
+      var collapse = parent.nextElementSibling;
+
+      if (this === accordion[i] && !collapse.classList.contains('open')) {
+        accordion[i].setAttribute('aria-expanded','true');
+        collapse.classList.add('open');
+        collapse.style.maxHeight = collapse.scrollHeight + 'px';
+      }
+      else {
+        accordion[i].setAttribute('aria-expanded','false');
+        collapse.classList.remove('open');
+        collapse.style.maxHeight = '0px';
+      }
+    }
+  }
 }
