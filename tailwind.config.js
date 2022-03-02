@@ -1343,12 +1343,12 @@ module.exports = {
 
           '&::before': {
             'font-family': 'FontAwesome',
-            'content': '"\f0d8"',
+            'content': '"\\f0d8"',
             'position': 'absolute',
             'top': '0',
             'left': '28px',
             'right': 'auto',
-            'font-size': '1.375',
+            'font-size': '1.375rem',
             'color': '#fff',
             'transition': 'top .35s ease',
             'display': 'block',
@@ -1358,7 +1358,12 @@ module.exports = {
 
           '&.dropdown-end': {
             'right': '0',
-            'left': 'auto'
+            'left': 'auto',
+
+            '&:before': {
+              'right': '28px',
+              'left': 'auto'
+            }
           }
         },
 
@@ -1373,7 +1378,7 @@ module.exports = {
               'margin-top': '2.8125rem',
 
               '&:before': {
-                'top': '-20px'
+                'top': '-19px'
               }
             }
           }
@@ -1790,17 +1795,62 @@ module.exports = {
             'background-repeat': 'no-repeat',
             'background-position': '50%',
             'background-size': 'contain',
-            'border': 'none',
-            'transition': 'background-color .25s ease,border-color .25s ease,background-position .15s ease-in-out,opacity .15s ease-out,box-shadow .15s ease-in-out'
-          },
-
-          'div[type="checkbox"]': {
             'border': '1px solid #cbd3da',
             'position': 'relative',
             'background-image': 'none',
             'border-radius': '0.35rem',
             'cursor': 'pointer',
             'margin-right': '7px',
+            'transition': 'background-color .25s ease,border-color .25s ease,background-position .15s ease-in-out,opacity .15s ease-out,box-shadow .15s ease-in-out'  
+          },
+
+          '[type="checkbox"]:checked + .form-check-input:after': {
+            'transition': 'opacity .25s ease-in-out',
+            'font-family': 'FontAwesome',
+            'content': `"\\f00c"`,
+            'width': '100%',
+            'height': '100%',
+            'color': '#fff',
+            'position': 'absolute',
+            'display': 'flex',
+            'justify-content': 'center',
+            'align-items': 'center',
+            'font-size': '.67rem'
+          },
+          
+          '[type="checkbox"]:checked + .form-check-input': {
+            'background-color': '#e91e63',
+            'border-color': '#e91e63'
+          }
+        }
+      }
+
+      const radios = {
+        '.form-check': {
+          '[type="radio"] + .form-check-input': {
+            'border-radius': '50%'
+          },
+
+          '[type="radio"] + .form-check-input:after': {
+            'transition': 'opacity .25s ease-in-out',
+            'content': '""',
+            'position': 'absolute',
+            'width': '.7rem',
+            'height': '.7rem',
+            'border-radius': '50%',
+            'background-image': 'linear-gradient(195deg, #ec407a, #d81b60)',
+            'opacity': '0',
+            'left': '0px',
+            'right': '0',
+            'top': '0px',
+            'bottom': '0',
+            'margin': 'auto'
+          },
+          '[type="radio"][checked] + .form-check-input': {
+            'border-color': '#e91e63'
+          },
+          '[type="radio"][checked] + .form-check-input:after': {
+            'opacity': '1'
           }
         }
       }
@@ -1929,6 +1979,37 @@ module.exports = {
           }
         }
       }
+
+      const tooltips = {
+        '.tooltip': {
+          'position': 'absolute',
+          'z-index': '20',
+          'padding': '.25rem .75rem',
+          'border-radius': '.5rem',
+          'box-shadow': '0 1px 2px 0 rgba(0, 0, 0, .05)',
+          'opacity': '0',
+          'background-color': '#212529',
+          'color': '#fff',
+
+          '&::before': {
+            'font-family': 'FontAwesome',
+            'content': '"\\f0d8"',
+            'position': 'absolute',
+            'top': '-19px',
+            'left': 'auto',
+            'right': 'auto',
+            'font-size': '1.375rem',
+            'color': '#212529',
+            'transition': 'top .35s ease',
+            'display': 'block',
+            'clear': 'both',
+            'box-sizing': 'border-box'
+          },
+        },
+        '[data-toggle="tooltip"]:hover + .tooltip': {
+          'opacity': '1'
+        }
+      }
   
       addComponents(typography),
       addComponents(alerts),
@@ -1945,8 +2026,10 @@ module.exports = {
       addComponents(modal),
       addComponents(inputs),
       addComponents(checkbox),
+      addComponents(radios),
       addComponents(pagination),
-      addComponents(progress)
+      addComponents(progress),
+      addComponents(tooltips)
     })
   ]
 }
