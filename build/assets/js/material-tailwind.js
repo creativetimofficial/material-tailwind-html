@@ -148,28 +148,28 @@ window.onload = function() {
     })
   )
 
-  // Material Design Input function
-  var inputs = document.querySelectorAll('input');
+  // // Material Design Input function
+  // var inputs = document.querySelectorAll('input');
 
-  for (var i = 0; i < inputs.length; i++) {
-    if(inputs[i].hasAttribute('value')){
-      inputs[i].parentElement.classList.add('is-filled');
-    }
+  // for (var i = 0; i < inputs.length; i++) {
+  //   if(inputs[i].hasAttribute('value')){
+  //     inputs[i].parentElement.classList.add('is-filled');
+  //   }
 
-    inputs[i].onkeyup = function(e) {
-      if(this.value != ""){
-        this.parentElement.classList.add('is-filled');
-      } else {
-        this.parentElement.classList.remove('is-filled');
-      }
-    };
+  //   inputs[i].onkeyup = function(e) {
+  //     if(this.value != ""){
+  //       this.parentElement.classList.add('is-filled');
+  //     } else {
+  //       this.parentElement.classList.remove('is-filled');
+  //     }
+  //   };
 
-    inputs[i].addEventListener('focusout', function(e) {
-      if(this.value != ""){
-        this.parentElement.classList.add('is-filled');
-      }
-    }, false);
-  }
+  //   inputs[i].addEventListener('focusout', function(e) {
+  //     if(this.value != ""){
+  //       this.parentElement.classList.add('is-filled');
+  //     }
+  //   }, false);
+  // }
 
   // Collapse
 
@@ -197,4 +197,22 @@ window.onload = function() {
       }
     }
   }
+
+  // Radio
+  var radios = document.querySelectorAll('[type="radio"]');
+  
+  radios.forEach((radio) =>
+  radio.addEventListener('click', function () {
+    for(var i = 0; i < radios.length; i++) {
+      if(radios[i].hasAttribute('checked')){
+        radios[i].removeAttribute('checked');
+      }  
+    }
+  
+    radio.setAttribute('checked','true');
+  })
+  )
+
+  // Tooltips
+  var tooltips = document.querySelectorAll('');
 }
