@@ -7,7 +7,7 @@
     <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossOrigin="anonymous"/>
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
     <!-- Product Styling -->
     <link rel="stylesheet" href="../styles.css" />
   </head>
@@ -104,13 +104,58 @@
               <h1 id="buttons">Popovers</h1>
               <h3 id="default">Default</h3>
               <div class="mb-2">
-                <span class="text-sm font-normal leading-6">50%</span>
-                <div class="progress">
-                  <div class="progress-bar w-1/2" role="progressbar"></div>
+                <button class="button button-primary" data-target="popover" type="button">
+                  Popover top
+                </button>
+                <div class="popover hidden" data-attribute="popover" data-popper-placement="top">
+                  <div class="popover-title">
+                    Gray popover title
+                  </div>
+                  <div class="popover-body p-3">
+                    And here's some amazing content. It's very engaging. Right?
+                  </div>
+                  <div class="arrow" data-popper-arrow></div>
+                </div>
+
+                <button class="button button-primary mx-4" data-target="popover" type="button">
+                  Popover right
+                </button>
+                <div class="popover hidden" data-attribute="popover" data-popper-placement="right">
+                  <div class="popover-title">
+                    Gray popover title
+                  </div>
+                  <div class="popover-body p-3">
+                    And here's some amazing content. It's very engaging. Right?
+                  </div>
+                  <div class="arrow" data-popper-arrow></div>
+                </div>
+
+                <button class="button button-primary mr-4" data-target="popover" type="button">
+                  Popover bottom
+                </button>
+                <div class="popover hidden" data-attribute="popover" data-popper-placement="bottom">
+                  <div class="popover-title">
+                    Gray popover title
+                  </div>
+                  <div class="popover-body p-3">
+                    And here's some amazing content. It's very engaging. Right?
+                  </div>
+                  <div class="arrow" data-popper-arrow></div>
+                </div>
+
+                <button class="button button-primary" data-target="popover" type="button">
+                  Popover left
+                </button>
+                <div class="popover hidden" data-attribute="popover" data-popper-placement="left">
+                  <div class="popover-title">
+                    Gray popover title
+                  </div>
+                  <div class="popover-body p-3">
+                    And here's some amazing content. It's very engaging. Right?
+                  </div>
+                  <div class="arrow" data-popper-arrow></div>
                 </div>
               </div>
-             
-             
             </div>
             <div class="basis-1/6 px-3">
               <ul class="list-none">
@@ -126,5 +171,6 @@
       </div>
     </div>
   </body>
+  <script src="https://unpkg.com/@popperjs/core@2.9.1/dist/umd/popper.min.js" charset="utf-8"></script>
   <script src="../../assets/js/material-tailwind.js"></script>
 </html>
