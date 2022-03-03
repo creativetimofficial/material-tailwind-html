@@ -36,6 +36,15 @@
   ready(closeModal);
 }());
 
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+      Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });
+  } else {
+      obj[key] = value;
+  }
+  return obj;
+};
+
 window.onload = function() {
 
   // Alert Dismiss
@@ -214,5 +223,84 @@ window.onload = function() {
   )
 
   // Tooltips
-  var tooltips = document.querySelectorAll('');
+
+  if (document.querySelectorAll('[data-target="tooltip"]')) {
+    const buttons = document.querySelectorAll('[data-target="tooltip"]');
+
+    buttons.forEach((button) => {
+      
+      const tooltip = button.nextElementSibling;
+      const placement = tooltip.getAttribute('data-placement');
+
+      const popperInstance = Popper.createPopper(button, tooltip, {
+        modifiers: [
+          {
+            name: 'offset',
+            options: {
+              offset: [0, 8],
+            },
+          },
+        ],
+        placement: placement,
+      });
+
+      function show() {
+        tooltip.setAttribute('data-show', '');
+
+        popperInstance.setOptions((options) => ({
+          ...options,
+          modifiers: [
+            ...options.modifiers,
+            { name: 'eventListeners', enabled: true },
+          ],
+        }));
+
+        popperInstance.update();
+      }
+
+      function hide() {
+        tooltip.removeAttribute('data-show');
+        popperInstance.setOptions((options) => ({
+          ...options,
+          modifiers: [
+            ...options.modifiers,
+            { name: 'eventListeners', enabled: false },
+          ],
+        }));
+      }
+
+      const showEvents = ['mouseenter', 'focus'];
+      const hideEvents = ['mouseleave', 'blur'];
+
+      showEvents.forEach((event) => {
+        button.addEventListener(event, show);
+      });
+
+      hideEvents.forEach((event) => {
+        button.addEventListener(event, hide);
+      });
+    });
+
+  }
+
+
+  // Popovers
+  if (document.querySelector('[data-target="popover"]')) {
+    var triggers = document.querySelectorAll('[data-target="popover"]');
+   
+    function openPopover(event) {
+      var element = event.target;
+      var popover = element.nextElementSibling;
+
+      var placement = popover.getAttribute('data-popper-placement');
+      element = Popper.createPopper(element, popover, {
+        placement: placement,
+      });
+      popover.classList.toggle("hidden");
+    }
+
+    triggers.forEach((trigger) => {
+      trigger.addEventListener('click', openPopover);
+    })
+  }
 }
