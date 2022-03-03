@@ -2113,6 +2113,29 @@ module.exports = {
 
         }
       }
+
+      const toggle = {
+        '.form-switch': {
+          '.form-check-input': {
+            // 'margin-left': '-2.375rem',
+            'position': 'relative',
+            'background-color': '#ced4da',
+            'height': '.9375rem',
+            'width': '1.875rem',
+            'background-image': 'none',
+            'background-position': '0',
+            'border-radius': '1.875rem',
+            'transition': 'background-color .25s ease,border-color .25s ease,background-position .15s ease-in-out,opacity .15s ease-out,box-shadow .15s ease-in-out',
+
+            '&:checked': {
+              'border-color': '#42424a',
+              'background-color': '#42424a',
+              'background-position': '100%',
+              'background-image': 'none'
+            }
+          }
+        }
+      }
   
       addComponents(typography),
       addComponents(alerts),
@@ -2133,7 +2156,8 @@ module.exports = {
       addComponents(pagination),
       addComponents(progress),
       addComponents(popovers),
-      addComponents(tooltips)
+      addComponents(tooltips),
+      addComponents(toggle)
     })
   ]
 }
