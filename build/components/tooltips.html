@@ -103,11 +103,31 @@
             <div class="basis-2/3 px-3">
               <h1 id="buttons">Tooltips</h1>
               <h3 id="default">Default</h3>
-              <div class="mb-2">
-                <button type="button" class="button bg-gradient-primary" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">Tooltip on bottom</button>
-                <div id="tooltip-bottom" role="tooltip" class="tooltip">Tooltip on bottom</div>
+              <div class="mb-2 py-10 flex">
+                <button class="button button-primary" data-target="tooltip" aria-describedby="tooltip">Tooltip Left</button>
+                <div class="tooltip" role="tooltip" data-placement="left">
+                  My tooltip
+                  <div class="arrow" data-popper-arrow></div>
+                </div>
+
+                <button class="button button-primary mx-4" data-target="tooltip" aria-describedby="tooltip">Tooltip top</button>
+                <div class="tooltip" role="tooltip" data-placement="top">
+                  My tooltip
+                  <div class="arrow" data-popper-arrow></div>
+                </div>
+
+                <button class="button button-primary mr-4" data-target="tooltip" aria-describedby="tooltip">Tooltip bottom</button>
+                <div class="tooltip" role="tooltip" data-placement="bottom">
+                  My tooltip
+                  <div class="arrow" data-popper-arrow></div>
+                </div>
+
+                <button class="button button-primary" data-target="tooltip" aria-describedby="tooltip">Tooltip right</button>
+                <div class="tooltip" role="tooltip" data-placement="right">
+                  My tooltip
+                  <div class="arrow" data-popper-arrow></div>
+                </div>
               </div>
-             
              
             </div>
             <div class="basis-1/6 px-3">
@@ -124,5 +144,6 @@
       </div>
     </div>
   </body>
+  <script src="https://unpkg.com/@popperjs/core@2.9.1/dist/umd/popper.min.js" charset="utf-8"></script>
   <script src="../../assets/js/material-tailwind.js"></script>
 </html>
