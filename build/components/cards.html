@@ -7,7 +7,7 @@
     <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossOrigin="anonymous"/>
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
     <!-- Product Styling -->
     <link rel="stylesheet" href="../styles.css" />
   </head>
@@ -105,35 +105,79 @@
               <h1 id="buttons">Cards</h1>
               <h3 id="default">Default</h3>
 
-              <div class="card mt-16" data-animation="true">
-                <div class="card-header relative z-30 -mt-6 mx-4">
-                  <a class="block" blur-shadow-image="true">
-                    <img src="https://demos.creative-tim.com/test/material-dashboard-pro/assets/img/products/product-1-min.jpg" alt="img-blur-shadow" class="img-fluid">
-                  </a>
-                </div>
-                <div class="card-body text-center">
-                  <div class="flex -mt-16 mx-auto">
-                    <a class="button button-link text-primary ml-auto border-0" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Refresh">
-                      <i class="material-icons text-lg">refresh</i>
-                    </a>
-                    <button class="button button-link text-info mr-auto border-0" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Edit">
-                      <i class="material-icons text-lg">edit</i>
-                    </button>
+              <div class="flex flex-row">
+                <div class="basis-1/2">
+                  <div class="card mt-16" data-animation="true">
+                    <div class="card-header relative z-30 -mt-6 mx-4">
+                      <a class="block" blur-shadow-image="true">
+                        <img src="https://demos.creative-tim.com/test/material-dashboard-pro/assets/img/products/product-1-min.jpg" alt="img-blur-shadow" class="img-fluid">
+                      </a>
+                    </div>
+                    <div class="card-body text-center">
+                      <div class="flex -mt-16 mx-auto">
+                        <a class="button button-link text-primary ml-auto border-0">
+                          <i class="material-icons text-lg">refresh</i>
+                        </a>
+                        <button class="button button-link text-info mr-auto border-0">
+                          <i class="material-icons text-lg">edit</i>
+                        </button>
+                      </div>
+                      <h5 class="font-normal">
+                        <a href="javascript:;">Cozy 5 Stars Apartment</a>
+                      </h5>
+                      <p class="mb-0">
+                        The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to "Naviglio" where you can enjoy the main night life in Barcelona.
+                      </p>
+                    </div>
+                    <hr class="dark horizontal my-0">
+                    <div class="card-footer flex">
+                      <p class="font-weight-normal my-auto">$899/night</p>
+                      <i class="material-icons position-relative ml-auto text-lg me-1 my-auto">place</i>
+                      <p class="text-sm my-auto"> Barcelona, Spain</p>
+                    </div>
                   </div>
-                  <h5 class="font-normal">
-                    <a href="javascript:;">Cozy 5 Stars Apartment</a>
-                  </h5>
-                  <p class="mb-0">
-                    The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to "Naviglio" where you can enjoy the main night life in Barcelona.
-                  </p>
                 </div>
-                <hr class="dark horizontal my-0">
-                <div class="card-footer flex">
-                  <p class="font-weight-normal my-auto">$899/night</p>
-                  <i class="material-icons position-relative ml-auto text-lg me-1 my-auto">place</i>
-                  <p class="text-sm my-auto"> Barcelona, Spain</p>
+                <div class="basis-1/2 ml-4">
+                  <div class="card mt-16">
+                    <div class="card-header relative z-30 -mt-6 mx-4 bg-gradient-primary rounded-lg py-4">
+                      <h4 class="text-white font-bold text-center mt-3 mb-0">Sign in</h4>
+                      <div class="flex flex-row mt-4">
+                        <div class="basis-1/8 text-center ml-auto">
+                          <a class="button bg-transparent px-4 mb-0" href="javascript:;">
+                            <i class="fa fa-facebook text-white text-lg" aria-hidden="true"></i>
+                          </a>
+                        </div>
+                        <div class="basis-1/8 text-center px-1">
+                          <a class="button bg-transparent px-4 mb-0" href="javascript:;">
+                            <i class="fa fa-github text-white text-lg" aria-hidden="true"></i>
+                          </a>
+                        </div>
+                        <div class="basis-1/8 text-center mr-auto">
+                          <a class="button bg-transparent px-4 mb-0" href="javascript:;">
+                            <i class="fa fa-google text-white text-lg" aria-hidden="true"></i>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-body text-center">
+                      <div class="input-group input-group-outline mb-6">
+                        <label class="form-label">Email</label>
+                        <input type="text" class="form-control">
+                      </div>
+                      <div class="input-group input-group-outline mb-6">
+                        <label class="form-label">Password</label>
+                        <input type="text" class="form-control">
+                      </div>
+                      <button class="button button-primary w-full">Sign In</button>
+                      <p class="mt-4 text-sm text-center">
+                        Don't have an account?
+                        <a href="javascript:;" class="text-primary font-bold">Sign up</a>
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
+              
             </div>
             <div class="basis-1/6 px-3">
               <ul class="list-none">
@@ -143,10 +187,8 @@
                 <li>Colors</li>
                 <li>Gradients</li>
               </ul>
-              
             </div>
           </div>
-          
         </main>
       </div>
     </div>
