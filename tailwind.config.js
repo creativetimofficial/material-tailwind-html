@@ -1982,32 +1982,135 @@ module.exports = {
 
       const tooltips = {
         '.tooltip': {
-          'position': 'absolute',
-          'z-index': '20',
-          'padding': '.25rem .75rem',
-          'border-radius': '.5rem',
-          'box-shadow': '0 1px 2px 0 rgba(0, 0, 0, .05)',
-          'opacity': '0',
-          'background-color': '#212529',
+          'background': '#333',
+          'z-index': '1060',
           'color': '#fff',
+          'font-weight': 'bold',
+          'padding': '4px 8px',
+          'font-size': '.8125rem',
+          'border-radius': '.25rem',
+          'display': 'none',
 
-          '&::before': {
-            'font-family': 'FontAwesome',
-            'content': '"\\f0d8"',
-            'position': 'absolute',
-            'top': '-19px',
-            'left': 'auto',
-            'right': 'auto',
-            'font-size': '1.375rem',
-            'color': '#212529',
-            'transition': 'top .35s ease',
-            'display': 'block',
-            'clear': 'both',
-            'box-sizing': 'border-box'
+          '&[data-show]': {
+            'display': 'block'
           },
-        },
-        '[data-toggle="tooltip"]:hover + .tooltip': {
-          'opacity': '1'
+
+          '&[data-popper-placement^="top"] > .arrow': {
+            'bottom': '-4px'
+          },
+
+          '&[data-popper-placement^="bottom"] > .arrow': {
+            'top': '-4px'
+          },
+
+          '&[data-popper-placement^="left"] > .arrow': {
+            'right': '-4px'
+          },
+
+          '&[data-popper-placement^="right"] > .arrow': {
+            'left': '-4px'
+          },
+        
+
+          '.arrow,.arrow:before': {
+            'position': 'absolute',
+            'width': '.5rem',
+            'height': '.5rem',
+            'background': 'inherit'
+          },
+
+          '.arrow': {
+            'visibility': 'hidden',
+          },
+
+          '.arrow:before': {
+            'visibility': 'visible',
+            'content': '""',
+            'transform': 'rotate(45deg)'
+          }
+        }
+      }
+
+      const popovers = {
+        '.popover': {
+          'position': 'absolute',
+          'z-index': '1060',
+          'display': 'block',
+          'max-width': '276px',
+          'font-size': '.75rem',
+          'word-wrap': 'break-word',
+          'background-color': '#fff',
+          'border': '0 solid rgba(0, 0, 0, .2)',
+          'border-radius': '0.5rem',
+          'box-shadow': '0 0.3125rem 0.625rem 0 rgba(0, 0, 0, .12)',
+
+          '.popover-title': {
+            'text-transform': 'uppercase',
+            'font-weight': '600',
+            'padding': '1rem',
+            'padding-bottom': '.5rem',
+            'color': '#7b809a',
+            'border-bottom': '1px solid rgba(241, 245, 249, 1)'
+
+          },
+
+          '.popover-body': {
+            'padding': '1rem',
+            'padding-top': '.5rem',
+            'color': '#7b809a'
+          },
+
+          '&[data-popper-placement="top"]': {
+            'margin-bottom': '.5rem !important',
+
+            '.arrow': {
+              'bottom': '-4px',
+              'top': 'auto'
+            }
+          },
+
+          '&[data-popper-placement="right"]': {
+            'margin-left': '.5rem !important',
+
+            '.arrow': {
+              'left': '-4px'
+            }
+          },
+
+          '&[data-popper-placement="bottom"]': {
+            'margin-top': '.5rem !important',
+
+            '.arrow': {
+              'top': '-4px'
+            }
+          },
+
+          '&[data-popper-placement="left"]': {
+            'margin-right': '.5rem !important',
+
+            '.arrow': {
+              'right': '-4px'
+            }
+          },
+
+          '.arrow,.arrow:before': {
+            'position': 'absolute',
+            'width': '.5rem',
+            'height': '.5rem',
+            'background': 'inherit'
+          },
+
+          '.arrow': {
+            'visibility': 'hidden',
+            'top': '-4px'
+          },
+
+          '.arrow:before': {
+            'visibility': 'visible',
+            'content': '""',
+            'transform': 'rotate(45deg)'
+          }
+
         }
       }
   
@@ -2029,6 +2132,7 @@ module.exports = {
       addComponents(radios),
       addComponents(pagination),
       addComponents(progress),
+      addComponents(popovers),
       addComponents(tooltips)
     })
   ]
