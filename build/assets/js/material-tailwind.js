@@ -303,4 +303,14 @@ window.onload = function() {
       trigger.addEventListener('click', openPopover);
     })
   }
+
+  // Toggle
+
+  var toggles = document.querySelectorAll('[data-attribute="toggle"]');
+  toggles.forEach((trigger) =>
+    trigger.addEventListener('click', function () {
+      trigger.nextElementSibling.toggleAttribute('checked');
+    })
+  )
+
 }
