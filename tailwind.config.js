@@ -2117,7 +2117,6 @@ module.exports = {
       const toggle = {
         '.form-switch': {
           '.form-check-input': {
-            // 'margin-left': '-2.375rem',
             'position': 'relative',
             'background-color': '#ced4da',
             'height': '.9375rem',
@@ -2127,11 +2126,31 @@ module.exports = {
             'border-radius': '1.875rem',
             'transition': 'background-color .25s ease,border-color .25s ease,background-position .15s ease-in-out,opacity .15s ease-out,box-shadow .15s ease-in-out',
 
-            '&:checked': {
+            '&:after': {
+              'transition': 'transform .25s ease-in-out,background-color .25s ease-in-out',
+              'content': '""',
+              'width': '1.25rem',
+              'height': '1.25rem',
+              'border-radius': '50%',
+              'border': '1px solid #ced4da',
+              'position': 'absolute',
+              'background-color': '#fff',
+              'transform': 'translateX(1px)',
+              'box-shadow': '0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -1px rgb(0 0 0 / 6%)',
+              'top': '-3px',
+              'left': '-5px'
+            },
+
+            '&[checked]': {
               'border-color': '#42424a',
               'background-color': '#42424a',
               'background-position': '100%',
-              'background-image': 'none'
+              'background-image': 'none',
+
+              '&:after': {
+                'transform': 'translateX(21px)',
+                'border-color': '#42424a'
+              }
             }
           }
         }
