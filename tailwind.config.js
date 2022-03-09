@@ -1031,7 +1031,24 @@ module.exports = {
           'background-position-x': '25%',
           'position': 'relative',
           'overflow': 'hidden',
-          'text-transform': 'uppercase'
+          'text-transform': 'uppercase',
+
+          '&.btn-sm': {
+            'padding': '.375rem 1rem',
+            'font-size': '.75rem',
+            'border-radius': '.5rem'
+          },
+          '&.btn-lg': {
+            'padding': '.75rem 1.75rem',
+            'font-size': '.875rem',
+            'border-radius': '.5rem'
+          },
+          'i': {
+            'vertical-align': 'middle',
+            'font-size': '1.1rem',
+            'display': 'inline-block'
+          }
+
         },
         '.button-primary': {
            'box-shadow': '0 3px 3px 0 rgba(233, 30, 99, .15), 0 3px 1px -2px rgba(233, 30, 99, .2), 0 1px 5px 0 rgba(233, 30, 99, .15)',
