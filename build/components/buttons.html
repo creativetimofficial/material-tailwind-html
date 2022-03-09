@@ -103,12 +103,26 @@
             </div>
             <div class="basis-2/3 px-3">
               <h1 id="buttons">Buttons</h1>
-              <h3 id="default">Default</h3>
+              <h3 id="default">Styles</h3>
 
-              <button class="button button-primary" data-ripple-light="true">Primary</button>
+              <button class="button button-primary" data-ripple-light="true">Default</button>
+              <button class="button button-primary" data-ripple-light="true">
+                <i class="material-icons">play_arrow</i>
+                With icon
+              </button> 
+              <button class="button button-primary" data-ripple-light="true">
+                <i class="material-icons">lightbulb</i>
+              </button> 
               
               <div>
-                <h3>Colors</h3>                
+                <h3 class="mt-10">Sizes</h3>
+                <button class="button button-primary btn-sm" data-ripple-light="true">Small</button>
+                <button class="button button-primary" data-ripple-light="true">Regular</button>
+                <button class="button button-primary btn-lg" data-ripple-light="true">Large</button>
+              </div>
+
+              <div>
+                <h3 class="mt-10">Colors</h3>                
                 <button class="button button-primary" data-ripple-light="true">Primary</button>
                 <button class="button button-secondary" data-ripple-light="true">Secondary</button>
                 <button class="button button-info" data-ripple-light="true">Info</button>
@@ -119,7 +133,7 @@
                 <button class="button button-light" data-ripple-dark="true">Light</button>
               </div>
               <div>
-                <h3 class="mt-16">Gradients</h3>         
+                <h3 class="mt-10">Gradients</h3>         
                 <button class="button bg-gradient-primary" data-ripple-light="true">Primary</button>
                 <button class="button bg-gradient-secondary" data-ripple-light="true">Secondary</button>
                 <button class="button bg-gradient-info" data-ripple-light="true">Info</button>
