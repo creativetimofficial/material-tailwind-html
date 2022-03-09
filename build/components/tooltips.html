@@ -104,25 +104,25 @@
               <h1 id="buttons">Tooltips</h1>
               <h3 id="default">Default</h3>
               <div class="mb-2 py-10 flex">
-                <button class="button button-primary" data-target="tooltip" aria-describedby="tooltip">Tooltip Left</button>
+                <button class="button button-primary" data-target="tooltip" aria-describedby="tooltip" data-ripple-light="true">Tooltip Left</button>
                 <div class="tooltip" role="tooltip" data-placement="left">
                   My tooltip
                   <div class="arrow" data-popper-arrow></div>
                 </div>
 
-                <button class="button button-primary mx-4" data-target="tooltip" aria-describedby="tooltip">Tooltip top</button>
+                <button class="button button-primary mx-4" data-target="tooltip" aria-describedby="tooltip" data-ripple-light="true">Tooltip top</button>
                 <div class="tooltip" role="tooltip" data-placement="top">
                   My tooltip
                   <div class="arrow" data-popper-arrow></div>
                 </div>
 
-                <button class="button button-primary mr-4" data-target="tooltip" aria-describedby="tooltip">Tooltip bottom</button>
+                <button class="button button-primary mr-4" data-target="tooltip" aria-describedby="tooltip" data-ripple-light="true">Tooltip bottom</button>
                 <div class="tooltip" role="tooltip" data-placement="bottom">
                   My tooltip
                   <div class="arrow" data-popper-arrow></div>
                 </div>
 
-                <button class="button button-primary" data-target="tooltip" aria-describedby="tooltip">Tooltip right</button>
+                <button class="button button-primary" data-target="tooltip" aria-describedby="tooltip" data-ripple-light="true">Tooltip right</button>
                 <div class="tooltip" role="tooltip" data-placement="right">
                   My tooltip
                   <div class="arrow" data-popper-arrow></div>
@@ -144,6 +144,7 @@
       </div>
     </div>
   </body>
+  <script crossorigin src="https://unpkg.com/material-ripple-effects/ripple.js"></script>
   <script src="https://unpkg.com/@popperjs/core@2.9.1/dist/umd/popper.min.js" charset="utf-8"></script>
   <script src="../../assets/js/material-tailwind.js"></script>
 </html>
