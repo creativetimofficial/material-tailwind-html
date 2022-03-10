@@ -2172,6 +2172,66 @@ module.exports = {
           }
         }
       }
+
+      const carousel = {
+        '.carousel': {
+          'position': 'relative',
+          'width': '100%',
+          'overflow': 'hidden',
+          'height': '450px',
+          'border-radius': '6px',
+          'box-shadow': '0 3px 6px rgba(0, 0, 0, 0.2)',
+
+          '&:hover .controls': {
+            'opacity': '1'
+          },
+
+          '.controls': {
+            'opacity': '0',
+            'display': 'flex',
+            'position': 'absolute',
+            'top': '50%',
+            'left': '0',
+            'justify-content': 'space-between',
+            'width': '100%',
+            'z-index': '99999',
+            'transition': 'all ease 0.5s',
+            
+            '.control': {
+              'margin': '0 5px',
+              'display': 'flex',
+              'align-items': 'center',
+              'justify-content': 'center',
+              'height': '40px',
+              'width': '40px',
+              'color': '#fff',
+              'opacity': '.7',
+              'transition': 'ease .3s',
+              'cursor': 'pointer',
+              
+              '&:hover': {
+                'opacity': '1'
+              }
+            }
+          },
+
+          '.slides': {
+            'position': 'absolute',
+            'top': '50%',
+            'left': '0',
+            'transform': 'translateY(-50%)',
+            'display': 'flex',
+            'width': '100%',
+            'transition': '1s ease-in-out all',
+            
+            '.slide': {
+              'min-width': '100%',
+              'min-height': '$carousel-height',
+              'height': 'auto'
+            }
+          }
+        }
+      }
   
       addComponents(typography),
       addComponents(alerts),
@@ -2179,6 +2239,7 @@ module.exports = {
       addComponents(badges),
       addComponents(buttons),
       addComponents(card),
+      addComponents(carousel),
       addComponents(collapse),
       addComponents(dropdown),
       addComponents(gradients),
