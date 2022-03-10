@@ -74,6 +74,9 @@
                       <a class="nav-link" href="./cards.html"><span>Cards</span></a>
                     </li>
                     <li>
+                      <a class="nav-link" href="./carousel.html"><span>Carousel</span></a>
+                    </li>
+                    <li>
                       <a class="nav-link" href="./collapse.html"><span>Collapse</span></a>
                     </li>
                     <li>
@@ -115,12 +118,20 @@
                     </div>
                     <div class="card-body text-center">
                       <div class="flex -mt-16 mx-auto">
-                        <a class="button button-link text-primary ml-auto border-0">
+                        <button class="button button-link text-primary ml-auto border-0" data-target="tooltip" aria-describedby="tooltip" data-ripple-light="true">                          
                           <i class="material-icons text-lg">refresh</i>
-                        </a>
-                        <button class="button button-link text-info mr-auto border-0">
+                        </button>
+                        <div class="tooltip" role="tooltip" data-placement="bottom">
+                          Refresh
+                          <div class="arrow" data-popper-arrow></div>
+                        </div>
+                        <button class="button button-link text-info mr-auto border-0" data-target="tooltip" aria-describedby="tooltip" data-ripple-light="true">                          
                           <i class="material-icons text-lg">edit</i>
                         </button>
+                        <div class="tooltip" role="tooltip" data-placement="bottom">
+                          Edit
+                          <div class="arrow" data-popper-arrow></div>
+                        </div>
                       </div>
                       <h5 class="font-normal">
                         <a href="javascript:;">Cozy 5 Stars Apartment</a>
@@ -198,6 +209,7 @@
       </div>
     </div>
   </body>
+  <script src="https://unpkg.com/@popperjs/core@2.9.1/dist/umd/popper.min.js" charset="utf-8"></script>
   <script crossorigin src="https://unpkg.com/material-ripple-effects/ripple.js"></script>
   <script src="../../assets/js/material-tailwind.js"></script>
 </html>
