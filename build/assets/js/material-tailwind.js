@@ -312,5 +312,40 @@ window.onload = function() {
       trigger.nextElementSibling.toggleAttribute('checked');
     })
   )
+  
+  // Carousel
 
+  const delay = 5000;
+
+  const slides = document.querySelector("[data-slides]");
+  const slidesNumber = slides.childElementCount;
+  const maxLeft = (slidesNumber - 1) * 100 * -1;
+  
+  let active = 0;
+  
+  function changeSlide(next = true) {
+    if (next) {
+      active += active > maxLeft ? -100 : active * -1;
+    } else {
+      active = active < 0 ? active + 100 : maxLeft;
+    }
+  
+    slides.style.left = active + "%";
+  }
+  
+  let autoChange = setInterval(changeSlide, delay);
+  const restart = function() {
+    clearInterval(autoChange);
+    autoChange = setInterval(changeSlide, delay);
+  };
+  
+  document.querySelector("[next-slide]").addEventListener("click", function() {
+    changeSlide();
+    restart();
+  });
+  
+  document.querySelector("[prev-slide]").addEventListener("click", function() {
+    changeSlide(false);
+    restart();
+  });
 }
