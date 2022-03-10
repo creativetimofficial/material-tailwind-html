@@ -1,0 +1,140 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Material Tailwind HTML</title>
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <!-- Product Styling -->
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <div>
+      <div class="container mx-auto">
+        <nav class="navbar mt-5">
+          <div>
+            <h1 class="text-sm font-bold p-3 mb-0">
+              <a href="javascript:;">Material Tailwind HTML</a>
+            </h1>
+          </div>
+          <div class="flex ml-auto">
+            <ul class="flex items-center">
+              <li>
+                <a class="nav-link" href="javascript:;"><span>Docs</span></a>
+              </li>
+              <li>
+                <a class="nav-link" href="javascript:;"><span>Components</span></a>
+              </li>
+              <li>
+                <a class="nav-link" href="javascript:;"><span>Templates</span></a>
+              </li>
+              <li>
+                <a class="nav-link" href="javascript:;"><span>Github</span></a>
+              </li>
+              <li>
+                <a class="nav-link" href="javascript:;"><span>Issues</span></a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <main class="mt-10">
+          <div class="flex flex-row">
+            <div class="basis-1/5 px-3">
+              <h5>Documentation</h5>
+              <ul class="list-none">
+                <li class="py-1 transition-colors duration-200 relative block hover:text-gray-900 text-gray-700 dark:text-gray-300 dark:hover:text-white">
+                  <i class="material-icons text-sm opacity-60">dashboard</i>
+                  Theme
+                </li>
+                <li class="py-1 transition-colors duration-200 relative block hover:text-gray-900 text-gray-700 dark:text-gray-300 dark:hover:text-white">
+                  <i class="material-icons text-sm opacity-60">dashboard</i>
+                  Layout
+                </li>
+                <li class="py-1 transition-colors duration-200 relative block hover:text-gray-900 text-gray-700 dark:text-gray-300 dark:hover:text-white">
+                  <i class="material-icons text-sm opacity-60">dashboard</i>
+                  Components
+                  <ul>
+                    <li>
+                      <a class="nav-link" href="./alerts.html"><span>Alerts</span></a>
+                    </li>
+                    <li>
+                      <a class="nav-link" href="./avatars.html"><span>Avatars</span></a>
+                    </li> 
+                    <li>
+                      <a class="nav-link" href="./badges.html"><span>Badges</span></a>
+                    </li> 
+                    <li>
+                      <a class="nav-link" href="./buttons.html"><span>Buttons</span></a>
+                    </li>
+                    <li>
+                      <a class="nav-link" href="./cards.html"><span>Cards</span></a>
+                    </li>
+                    <li>
+                      <a class="nav-link" href="./carousel.html"><span>Carousel</span></a>
+                    </li>
+                    <li>
+                      <a class="nav-link" href="./collapse.html"><span>Collapse</span></a>
+                    </li>
+                    <li>
+                      <a class="nav-link" href="./dropdown.html"><span>Dropdown</span></a>
+                    </li>
+                    <li>
+                      <a class="nav-link" href="./forms.html"><span>Forms</span></a>
+                    </li>
+                    <li>
+                      <a class="nav-link" href="./modal.html"><span>Modal</span></a>
+                    </li>
+                    <li>
+                      <a class="nav-link" href="./pagination.html"><span>Pagination</span></a>
+                    </li>
+                    <li>
+                      <a class="nav-link" href="./progress.html"><span>Progress</span></a>
+                    </li>
+                    <li>
+                      <a class="nav-link" href="./popovers.html"><span>Popovers</span></a>
+                    </li>
+                    <li>
+                      <a class="nav-link" href="./tooltips.html"><span>Tooltips</span></a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="basis-2/3 px-3">
+              <h1 id="carousel">Carousel</h1>
+            
+              <div class="carousel">
+                <div class="slides" data-slides>
+                  <img src="https://images.unsplash.com/photo-1433838552652-f9a46b332c40?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="slide image" class="slide">
+                  <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="slide image" class="slide">
+                  <img src="https://images.unsplash.com/photo-1470770903676-69b98201ea1c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="slide image" class="slide">
+                </div>
+                <div class="controls">
+                  <div class="control" prev-slide>
+                    <i class="material-icons">arrow_back_ios</i>
+                  </div>
+                  <div class="control" next-slide>
+                    <i class="material-icons">arrow_forward_ios</i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="basis-1/6 px-3">
+              <ul class="list-none">
+                <li href="#default">Default</li>
+                <li>Disabled</li>
+                <li>Sizes</li>
+                <li>Colors</li>
+                <li>Gradients</li>
+              </ul>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+  <script src="../../assets/js/material-tailwind.js"></script>
+</html>
