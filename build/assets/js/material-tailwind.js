@@ -63,6 +63,13 @@ window.onload = function() {
     })
   )
 
+  // if (document.querySelectorAll('.dropdown.open')) {
+  //   window.addEventListener('click', function(e){
+  //     if (!document.querySelector('.dropdown-menu').contains(e.target)){
+  //       document.querySelector('.dropdown').classList.remove('open');
+  //     }
+  //   })  
+  // }
 
   // Colored shadow
   if (document.querySelectorAll('[blur-shadow-image]')) {
@@ -156,29 +163,6 @@ window.onload = function() {
       el.parentElement.classList.remove('focused');
     })
   )
-
-  // // Material Design Input function
-  // var inputs = document.querySelectorAll('input');
-
-  // for (var i = 0; i < inputs.length; i++) {
-  //   if(inputs[i].hasAttribute('value')){
-  //     inputs[i].parentElement.classList.add('is-filled');
-  //   }
-
-  //   inputs[i].onkeyup = function(e) {
-  //     if(this.value != ""){
-  //       this.parentElement.classList.add('is-filled');
-  //     } else {
-  //       this.parentElement.classList.remove('is-filled');
-  //     }
-  //   };
-
-  //   inputs[i].addEventListener('focusout', function(e) {
-  //     if(this.value != ""){
-  //       this.parentElement.classList.add('is-filled');
-  //     }
-  //   }, false);
-  // }
 
   // Collapse
 
@@ -314,38 +298,38 @@ window.onload = function() {
   )
   
   // Carousel
-
-  const delay = 5000;
-
-  const slides = document.querySelector("[data-slides]");
-  const slidesNumber = slides.childElementCount;
-  const maxLeft = (slidesNumber - 1) * 100 * -1;
-  
-  let active = 0;
-  
-  function changeSlide(next = true) {
-    if (next) {
-      active += active > maxLeft ? -100 : active * -1;
-    } else {
-      active = active < 0 ? active + 100 : maxLeft;
+  if (document.querySelector('[data-slides]')) {
+    const timer = 5000;
+    const slides = document.querySelector("[data-slides]");
+    const slidesNumber = slides.childElementCount;
+    const maxLeft = (slidesNumber - 1) * 100 * -1;
+    
+    let active = 0;
+    
+    function changeSlide(next = true) {
+      if (next) {
+        active += active > maxLeft ? -100 : active * -1;
+      } else {
+        active = active < 0 ? active + 100 : maxLeft;
+      }
+    
+      slides.style.left = active + "%";
     }
-  
-    slides.style.left = active + "%";
+    
+    let autoChange = setInterval(changeSlide, timer);
+    const restart = function() {
+      clearInterval(autoChange);
+      autoChange = setInterval(changeSlide, timer);
+    };
+    
+    document.querySelector("[next-slide]").addEventListener("click", function() {
+      changeSlide();
+      restart();
+    });
+    
+    document.querySelector("[prev-slide]").addEventListener("click", function() {
+      changeSlide(false);
+      restart();
+    });
   }
-  
-  let autoChange = setInterval(changeSlide, delay);
-  const restart = function() {
-    clearInterval(autoChange);
-    autoChange = setInterval(changeSlide, delay);
-  };
-  
-  document.querySelector("[next-slide]").addEventListener("click", function() {
-    changeSlide();
-    restart();
-  });
-  
-  document.querySelector("[prev-slide]").addEventListener("click", function() {
-    changeSlide(false);
-    restart();
-  });
 }
