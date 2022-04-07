@@ -332,4 +332,14 @@ window.onload = function() {
       restart();
     });
   }
+
+  // Progress
+  if (document.querySelectorAll('.progress-bar')) {
+    const link = document.querySelectorAll('.progress-bar');
+
+    for (let i = 0; i < link.length; i++) {
+      var value = link[i].getAttribute('data-value');      
+      link[i].setAttribute("style", 'width:'+value+'%;');
+    }
+  }
 }
