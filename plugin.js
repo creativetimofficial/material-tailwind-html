@@ -64,7 +64,6 @@ module.exports = plugin(function({ addComponents }) {
       'verticalAlign': 'middle',
       'transition': 'all .15s ease-in',
       'cursor': 'pointer',
-      'margin-bottom': '1rem',
       'letter-spacing': '0',
       'background-size': '150%',
       'background-position-x': '25%',
@@ -229,6 +228,13 @@ module.exports = plugin(function({ addComponents }) {
           'box-shadow': '0 14px 26px -12px rgba(240, 242, 245, .4), 0 4px 23px 0 rgba(240, 242, 245, .15), 0 8px 10px -5px rgba(240, 242, 245, .2)'
         }
       }
+    },
+    ".text-gradient": {
+      "background-clip": "text",
+      "-webkit-background-clip": "text",
+      "-webkit-text-fill-color": "transparent",
+      "z-index": "1",
+      position: "relative"
     }
   }
   const card = {
