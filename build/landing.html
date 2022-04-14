@@ -1,0 +1,240 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Material Tailwind HTML</title>
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <!-- Product Styling -->
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      @import url("https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/dracula.min.css");
+
+.editor {
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12),
+    0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  font-family: "PT Mono", monospace;
+  font-size: 14px;
+  font-weight: 400;
+  min-height: 340px;
+  letter-spacing: normal;
+  line-height: 20px;
+  padding: 10px;
+  resize: none !important;
+  tab-size: 4;
+}
+.editor.hljs {
+  padding: 10px;
+}
+.controls {
+  font-size: 14px;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  margin-top: -10px;
+  display: flex;
+}
+.controls > div:first-child > a {
+  display: inline-block;
+  width: 40px;
+}
+.features {
+  width: 547px;
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+    </style>
+  </head>
+  <body>
+    <div>
+      <div class="container mx-auto">
+        <nav class="navbar mt-5 z-10 bg-white shadow-xl">
+          <div>
+            <h1 class="text-sm font-bold p-3 mb-0">
+              <a href="javascript:;">Material Tailwind</a>
+            </h1>
+          </div>
+          <div class="flex ml-auto">
+            <ul class="flex items-center">
+              <li>
+                <a class="nav-link" href="https://material-tailwind.com/documentation/quick-start">
+                  <i class="material-icons opacity-60 mr-2 text-base">article</i>
+                  <span>Docs</span>
+                </a>
+              </li>
+              <li>
+                <a class="nav-link" href="javascript:;">
+                  <i class="material-icons opacity-60 mr-2 text-base">apps</i>
+                  <span>Components</span>
+                </a>
+              </li>
+              <li>
+                <a class="nav-link" href="javascript:;" data-target="tooltip" aria-describedby="tooltip" data-ripple-light="true">
+                  <i class="material-icons opacity-60 mr-2 text-base">view_carousel</i>
+                  <span>Templates</span>
+                </a>
+                <div class="tooltip" role="tooltip" data-placement="bottom">
+                  Comming Soon
+                  <div class="arrow" data-popper-arrow></div>
+                </div>
+              </li>
+              <li>
+                <a class="nav-link" href="https://github.com/creativetimofficial/material-tailwind?ref=material-tailwind">
+                  <i class="fab fa-github opacity-60 mr-2 text-base"></i>
+                  <span>Github</span>
+                </a>
+              </li>
+              <li>
+                <a class="nav-link" href="javascript:;">
+                  <i class="material-icons opacity-60 mr-2 text-base">bug_report</i>
+                  <span>Issues</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <main>
+         <!-- start Header -->
+          <section class="header py-10 h-fit">
+            <div class="items-center flex flex-wrap">
+              <div class="w-full md:w-5/12 px-12 md:px-4">
+                <h1><span class="bg-gradient-info text-gradient">Material</span> Tailwind</h1>
+                <p class="mb-4 pr-5">Material Tailwind is an easy to use components library for Tailwind CSS and Material Design.</p>
+                <button class="button button-info" data-ripple-light="true">Get Started</button>
+              </div>
+              <div class="w-full md:w-6/12 px-4 pt-24 md:pt-0 relative">
+                <img class="w-100 rounded-lg" src="https://images.unsplash.com/photo-1648753532185-77d83918b809?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2124&q=80" alt="">
+              </div>
+            </div>
+          </section>
+          <!-- end Header -->
+          <!-- start Features -->
+          <section class="py-20">
+            <div class="flex flex-row content-center">
+              <div class="basis-1/4 px-3">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="flex mb-4">
+                      <div class="w-12 h-12 bg-gradient-info rounded-lg -mt-10 absolute text-center">
+                        <i class="material-icons text-xl relative text-white top-1/4">edit</i>
+                      </div>
+                    </div>
+                    <h5 class="mt-5">CSS Components</h5>
+                    <p>Material Tailwind comes with a huge number of Fully Coded CSS components.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="basis-1/4 px-3">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="flex mb-4">
+                      <div class="w-12 h-12 bg-gradient-info rounded-lg -mt-10 absolute text-center">
+                        <i class="material-icons text-xl relative text-white top-1/4">edit</i>
+                      </div>
+                    </div>
+                    <h5 class="mt-5">JavaScript Components</h5>
+                    <p>Material Tailwind only features React components, but in the near future it will future more.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="basis-1/4 px-3">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="flex mb-4">
+                      <div class="w-12 h-12 bg-gradient-info rounded-lg -mt-10 absolute text-center">
+                        <i class="material-icons text-xl relative text-white top-1/4">edit</i>
+                      </div>
+                    </div>
+                    <h5 class="mt-5">Documentation</h5>
+                    <p>Built by developers for developers. You will love to work with Material Tailwind.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="basis-1/4 px-3">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="flex mb-4">
+                      <div class="w-12 h-12 bg-gradient-info rounded-lg -mt-10 absolute text-center">
+                        <i class="material-icons text-xl relative text-white top-1/4">edit</i>
+                      </div>
+                    </div>
+                    <h5 class="mt-5">Fast</h5>
+                    <p>Avoids unnecessary styles props at runtime, making it more performant than other UI libraries.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- end Features -->
+          <!-- start Button -->
+          <div class="items-center flex flex-wrap pt-24">
+            <div class="w-full md:w-5/12 px-12 md:px-4">
+              <h2>
+                Change your <br/>
+                <span class="bg-gradient-info text-gradient">button's</span> design.
+              </h2>
+              <p class="mb-4 pr-10">Putting together a page has never been easier than matching together pre-made components. You can easily customize and built your pages.</p>
+              <button class="button button-info" data-ripple-light="true">Get Started</button>
+              <div class="flex flex-wrap mt-7 text-[#344767]">
+                <div class="w-auto mr-6 text-center">
+                  <a href="javascript:;">
+                    <i class="material-icons opacity-80 text-xl">radio_button_checked</i>
+                    <p>Default</p>
+                  </a>
+                </div>
+                <div class="w-auto mr-6 text-center">
+                  <a href="javascript:;">
+                    <i class="material-icons opacity-80 text-xl">gradient</i>
+                    <p>Gradient</p>
+                  </a>
+                </div>
+                <div class="w-auto mr-6 text-center">
+                  <a href="javascript:;">
+                    <i class="material-icons opacity-80 text-xl">format_color_text</i>
+                    <p>Link</p>
+                  </a>
+                </div>
+                <div class="w-auto text-center">
+                  <a href="javascript:;">
+                    <i class="material-icons opacity-80 text-xl">favorite</i>
+                    <p>Icon</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="w-full md:w-6/12 px-4 pt-24 md:pt-0 relative">
+              <div class="w-full rounded-xl shadow-lg overflow-hidden bg-[#282a36ef] mb-5">
+                <div class="h-[25px] bg-[#282A36] relative">
+                  <div class="absolute top-1/2 left-2.5 -mt-1.5 w-2.5 h-2.5 rounded-full bg-[#dc143c] shadow-[15px_0_0_#ffa500,_30px_0_0_#32cd32]"></div>
+                </div>
+                <div class="window-body">
+                  <div class="editor language-js" data-gramm="false"></div>
+                </div>
+              </div>
+              <div class="w-80 h-40 absolute top-24 -right-24 rounded-lg bg-dark blurr shadow-blur flex h-screen">
+                <div class="m-auto">
+                  <button class="button button-info" >
+                    <i class="material-icons" data-ripple-light="true">favorite</i>
+                    Button
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end Button -->
+        </main>
+      </div>
+    </div>  
+  </body>
+  <script crossorigin src="https://unpkg.com/material-ripple-effects/ripple.js"></script>
+  <script src="https://unpkg.com/@popperjs/core@2.9.1/dist/umd/popper.min.js" charset="utf-8"></script>
+  <script src="../assets/js/material-tailwind.js"></script>
+</html>
