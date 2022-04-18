@@ -1,4 +1,4 @@
-For the live-preview you have to run the followinf commands:
+For the live-preview you have to run the following commands:
 
 **npm run build**
 
