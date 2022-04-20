@@ -150,7 +150,7 @@
                 </div>
               </div>
               <h1 class="font-black">Material Tailwind</h1>
-              <p class="text-lg mb-4 md:pr-12">Material Tailwind is an easy to use components library for Tailwind CSS and
+              <p class="text-lg mb-4 md:pr-12 opacity-80">Material Tailwind is an easy to use components library for Tailwind CSS and
                 Material Design.</p>
               <div class="block lg:flex">
                 <button class="button button-info" data-ripple-light="true">Get Started</button>
@@ -211,19 +211,44 @@
               <div class="mt-10 md:-mt-10">
                 <div class="avatar-group">
                   <div class="avatar avatar-lg">
-                    <img src="./assets/img/face-1.jpg" alt="kal" class="shadow rounded-full">
+                    <img src="./assets/img/face-1.jpg" alt="kal" class="shadow rounded-full" data-target="tooltip"
+                    aria-describedby="tooltip">
+                    <div class="tooltip" role="tooltip" data-placement="bottom">
+                      Jay
+                      <div class="arrow" data-popper-arrow></div>
+                    </div>
                   </div>
                   <div class="avatar avatar-lg">
-                    <img src="./assets/img/face-2.jpg" alt="kal" class="shadow rounded-full">
+                    <img src="./assets/img/face-2.jpg" alt="kal" class="shadow rounded-full" data-target="tooltip"
+                    aria-describedby="tooltip">
+                    <div class="tooltip" role="tooltip" data-placement="bottom">
+                      Mark
+                      <div class="arrow" data-popper-arrow></div>
+                    </div>
                   </div>
                   <div class="avatar avatar-lg">
-                    <img src="./assets/img/face-3.jpg" alt="kal" class="shadow rounded-full">
+                    <img src="./assets/img/face-3.jpg" alt="kal" class="shadow rounded-full" data-target="tooltip"
+                    aria-describedby="tooltip">
+                    <div class="tooltip" role="tooltip" data-placement="bottom">
+                      Sara
+                      <div class="arrow" data-popper-arrow></div>
+                    </div>
                   </div>
                   <div class="avatar avatar-lg">
-                    <img src="./assets/img/face-4.jpg" alt="kal" class="shadow rounded-full">
+                    <img src="./assets/img/face-4.jpg" alt="kal" class="shadow rounded-full" data-target="tooltip"
+                    aria-describedby="tooltip">
+                    <div class="tooltip" role="tooltip" data-placement="bottom">
+                      Emma
+                      <div class="arrow" data-popper-arrow></div>
+                    </div>
                   </div>
                   <div class="avatar avatar-lg">
-                    <img src="./assets/img/face-5.jpg" alt="kal" class="shadow rounded-full">
+                    <img src="./assets/img/face-5.jpg" alt="kal" class="shadow rounded-full" data-target="tooltip"
+                    aria-describedby="tooltip">
+                    <div class="tooltip" role="tooltip" data-placement="bottom">
+                      Nathalie
+                      <div class="arrow" data-popper-arrow></div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -237,8 +262,8 @@
           <!-- start Features section -->
           <section class="py-10 lg:py-20">
             <div class="w-full md:w-3/4 lg:w-1/2 mx-auto text-center mb-24">
-              <h2>Meet your new framework</h2>
-              <p class="text-lg">Material Tailwind features multiple React components, all written with Tailwind CSS
+              <h2 class="font-semibold">Meet your new framework</h2>
+              <p class="text-lg opacity-80">Material Tailwind features multiple React components, all written with Tailwind CSS
                 classes and Material Design guidelines.</p>
             </div>
             <div class="flex flex-row flex-wrap content-center">
@@ -251,7 +276,7 @@
                       </div>
                     </div>
                     <h5 class="mt-5">CSS Components</h5>
-                    <p>Material Tailwind comes with a huge number of Fully Coded CSS components.</p>
+                    <p class="opacity-80">Material Tailwind comes with a huge number of Fully Coded CSS components.</p>
                   </div>
                 </div>
               </div>
@@ -264,7 +289,7 @@
                       </div>
                     </div>
                     <h5 class="mt-5">JavaScript Components</h5>
-                    <p>Material Tailwind only features React components, but in the near future it will future more.</p>
+                    <p class="opacity-80">Material Tailwind only features React components, but in the near future it will future more.</p>
                   </div>
                 </div>
               </div>
@@ -277,7 +302,7 @@
                       </div>
                     </div>
                     <h5 class="mt-5">Documentation</h5>
-                    <p>This extension comes a lot of fully coded examples that help you get started faster.</p>
+                    <p class="opacity-80">This extension comes a lot of fully coded examples that help you get started faster.</p>
                   </div>
                 </div>
               </div>
@@ -290,7 +315,7 @@
                       </div>
                     </div>
                     <h5 class="mt-5">Templates (soon)</h5>
-                    <p>Material Tailwind will come with fully coded sample pages so you could start working instantly.
+                    <p class="opacity-80">Material Tailwind will come with fully coded sample pages so you could start working instantly.
                     </p>
                   </div>
                 </div>
@@ -306,7 +331,7 @@
                   Change your <br />
                   <span class="bg-gradient-info text-gradient">button's</span> design.
                 </h2>
-                <p class="text-lg mb-5 md:pr-10">Putting together a page has never been easier than matching together
+                <p class="text-lg mb-5 md:pr-10 opacity-80">Putting together a page has never been easier than matching together
                   pre-made components. You can easily customize and built your pages.</p>
                 <button class="button button-info" data-ripple-light="true">Get Started</button>
                 <div class="flex flex-wrap mt-7 text-[#344767]">
@@ -387,7 +412,7 @@
                     Awesome <br />
                     <span class="bg-gradient-info text-gradient">Color</span> palette.
                   </h2>
-                  <p class="text-lg lg:pr-10">Material Tailwind provides a simple way to customize your button, you can
+                  <p class="text-lg lg:pr-10 opacity-80">Material Tailwind provides a simple way to customize your button, you can
                     change the colors, fonts, breakpoints and everything you need.</p>
                 </div>
               </div>
@@ -402,7 +427,7 @@
                   Realistic <br />
                   <span class="bg-gradient-info text-gradient">Shadows</span> included.
                 </h2>
-                <p class="text-lg lg:pr-24">Material Tailwind provides a simple way to customize your button, you can
+                <p class="text-lg lg:pr-24 opacity-80">Material Tailwind provides a simple way to customize your button, you can
                   change the colors, fonts, breakpoints and everything you need.</p>
               </div>
               <div class="w-full md:w-6/12 px-4 pt-10 md:pt-0 relative">
@@ -495,7 +520,7 @@
                   With your favorite <br />
                   <span class="bg-gradient-info text-gradient">Framework.</span>
                 </h2>
-                <p class="text-lg mb-4 lg:pr-24">Material Tailwind provides a simple way to customize your button, you
+                <p class="text-lg mb-4 lg:pr-24 opacity-80">Material Tailwind provides a simple way to customize your button, you
                   can change the colors, fonts, breakpoints and everything you need.</p>
                 <div class="flex flex-wrap mt-7 text-[#344767]">
                   <div class="w-16 mr-6 text-center">
@@ -550,7 +575,7 @@
                 Trusted by over <br />
                 <span class="bg-gradient-info text-gradient">1,855,822+ web developers</span>
               </h2>
-              <p class="text-lg">Many Fortune 500 companies, startups, universities and governmental institutions love
+              <p class="text-lg opacity-80">Many Fortune 500 companies, startups, universities and governmental institutions love
                 Creative Tim's products.</p>
             </div>
             <div class="items-center flex flex-wrap mt-10">
@@ -559,7 +584,7 @@
                   <h5 class="font-black mb-0">Nick Willever</h5>
                   <div class="flex items-center mb-5">
                     <i class="fa fa-clock text-sm opacity-60 mr-2"></i>
-                    <p>1 day ago</p>
+                    <p class="mb-0">1 day ago</p>
                   </div>
                   <p>"This is an excellent product, the documentation is excellent and helped me get things done more
                     efficiently."</p>
@@ -577,9 +602,9 @@
                   <h5 class="font-black mb-0 text-white">Shailesh Kushwaha</h5>
                   <div class="flex items-center mb-5">
                     <i class="fa fa-clock text-sm opacity-60 mr-2"></i>
-                    <p>1 week ago</p>
+                    <p class="text-white mb-0">1 week ago</p>
                   </div>
-                  <p>"I found solution to all my design needs from Creative Tim. I use them as a freelancer in my hobby
+                  <p class="text-white">"I found solution to all my design needs from Creative Tim. I use them as a freelancer in my hobby
                     projects for fun! And its really affordable, very humble guys !!!"</p>
                   <div class="mt-5">
                     <i class="fas fa-star" aria-hidden="true"></i>
@@ -595,7 +620,7 @@
                   <h5 class="font-black mb-0">Samuel Kamuli</h5>
                   <div class="flex items-center mb-5">
                     <i class="fa fa-clock text-sm opacity-60 mr-2"></i>
-                    <p>3 weeks ago</p>
+                    <p class="mb-0">3 weeks ago</p>
                   </div>
                   <p>"Great product. Helped me cut the time to set up a site. I used the components within instead of
                     starting from scratch. I highly recommend for developers who want to spend more time on the
@@ -633,7 +658,7 @@
           <section class="md:pt-12 pb-64">
             <div class="w-full md:w-3/4 mx-auto text-center">
               <h2 class="font-black mb-4">Join our comumunity</h2>
-              <p class="text-lg">Since Tailwind CSS is an open source project, we want to continue this movement too.
+              <p class="text-lg opacity-80">Since Tailwind CSS is an open source project, we want to continue this movement too.
               </p>
             </div>
             <div class="items-center flex flex-wrap mt-14">
@@ -642,7 +667,7 @@
                   <div class="card-body">
                     <div class="flex mb-4">
                       <div class="w-12 h-12 bg-[#1A237E] rounded-lg -mt-10 absolute text-center">
-                        <i class="material-icons text-xl relative text-white top-[20%]">dashboard</i>
+                        <i class="fab fa-github text-xl relative text-white top-[20%]"></i>
                       </div>
                     </div>
                     <h5 class="font-semibold mt-7">Github</h5>
@@ -655,7 +680,7 @@
                   <div class="card-body">
                     <div class="flex mb-4">
                       <div class="w-12 h-12 bg-[#1A237E] rounded-lg -mt-10 absolute text-center">
-                        <i class="material-icons text-xl relative text-white top-[20%]">dashboard</i>
+                        <i class="fab fa-discord text-xl relative text-white top-[20%]"></i>
                       </div>
                     </div>
                     <h5 class="font-semibold mt-7">Discord</h5>
@@ -668,7 +693,7 @@
                   <div class="card-body">
                     <div class="flex mb-4">
                       <div class="w-12 h-12 bg-[#1A237E] rounded-lg -mt-10 absolute text-center">
-                        <i class="material-icons text-xl relative text-white top-[20%]">dashboard</i>
+                        <i class="fab fa-twitter text-xl relative text-white top-[20%]"></i>
                       </div>
                     </div>
                     <h5 class="font-semibold mt-7">Twitter</h5>
