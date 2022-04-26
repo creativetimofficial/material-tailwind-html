@@ -163,6 +163,34 @@ window.onload = function() {
       el.parentElement.classList.remove('focused');
     })
   )
+  
+  // Material Design Input function
+  var inputs = document.querySelectorAll('input');
+
+  for (var i = 0; i < inputs.length; i++) {
+    if(inputs[i].hasAttribute('value')){
+      inputs[i].parentElement.classList.add('is-filled');
+    }
+    inputs[i].addEventListener('focus', function(e) {
+      this.parentElement.classList.add('is-focused');
+    }, false);
+
+    inputs[i].onkeyup = function(e) {
+      if(this.value != ""){
+        this.parentElement.classList.add('is-filled');
+      } else {
+        this.parentElement.classList.remove('is-filled');
+      }
+    };
+
+    inputs[i].addEventListener('focusout', function(e) {
+      if(this.value != ""){
+        this.parentElement.classList.add('is-filled');
+      }
+      this.parentElement.classList.remove('is-focused');
+    }, false);
+  }
+ 
 
   // Collapse
 
@@ -567,4 +595,61 @@ expand_trigger.addEventListener("click", function () {
   bar3.classList.toggle("origin-[10%_90%]");
   bar3.classList.toggle("mt-[0.1875rem]");
   bar3.classList.toggle("mt-[0.4375rem]");
+});
+
+// Change the npm install command
+
+var navtabs = document.querySelector('.first-tab');
+var navtabs_active = document.querySelector('.second-tab');
+var code_react = document.getElementById('install_react');
+var code_html = document.getElementById('install_html');
+
+
+if (navtabs) {
+  navtabs.addEventListener('click', function(e){
+    code_react.classList.add('block');
+    code_react.classList.remove('hidden');
+    code_html.classList.add('hidden');
+    code_html.classList.remove('block');
+  })  
+}
+
+if (navtabs_active) {
+  navtabs_active.addEventListener('click', function(e){
+    code_react.classList.add('hidden');
+    code_react.classList.remove('block');
+    code_html.classList.add('block');
+    code_html.classList.remove('hidden');
+  })  
+}
+
+// copy to clipboard
+var copy_clipboard_react = document.getElementById("copy_react");
+var copy_clipboard_html = document.getElementById("copy_html");
+
+copy_clipboard_react.addEventListener('click', function (event) {
+  copyToClipboard(event);
+})
+
+copy_clipboard_html.addEventListener('click', function (event) {
+  copyToClipboard(event);
+})
+
+function copyToClipboard(e) {
+  var
+    t = e.target, 
+    c = t.dataset.copytarget,
+    inp = (c ? document.querySelector(c).innerText : null);
+  console.log(inp);
+
+
+  navigator.clipboard.writeText(inp);
+
+}
+
+
+// Highlight Code
+
+document.querySelectorAll('div.code').forEach(el => {
+  hljs.highlightElement(el);
 });
