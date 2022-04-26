@@ -8,13 +8,13 @@ module.exports = plugin(function({ addComponents }) {
     },
     'h1,h2,h3,h4,h5,h6': {
       'font-weight': '400',
-      'font-family': 'Roboto Slab,sans-serif',
-      'letter-spacing': '-.05rem',
+      'font-family': 'Roboto,sans-serif',
+      'letter-spacing': '-.02rem',
       'margin-bottom': '.5rem',
-      'color': '#344767'
+      'color': '#1A237E'
     },
     'a': {
-      'color': '#344767'
+      'color': '#1A237E'
     },
     'h1,.h1': {
       'font-size': '3rem',
@@ -47,8 +47,12 @@ module.exports = plugin(function({ addComponents }) {
       'font-weight': '400',
     },
     'p': {
+      'font-family': 'Roboto,sans-serif',
+      'margin-bottom': '.5rem',
+      'color': '#1A237E',
       'line-height': '1.625',
       'font-weight': '300',
+      'letter-spacing': '-.05rem'
     }
   }
   const buttons = {
@@ -261,7 +265,8 @@ module.exports = plugin(function({ addComponents }) {
         'color': '#7b809a'
       },
       '.card-footer': {
-        'padding': '1.5rem',
+        'padding-left': '1.5rem',
+        'padding-right': '1.5rem',
         'background-color': 'transparent',
         'color': '#7b809a'
       }
@@ -502,6 +507,9 @@ module.exports = plugin(function({ addComponents }) {
     },
     '.shadow-blur': {
       'box-shadow': 'inset 0 0 1px 1px hsla(0,0%,100%,.9),0 20px 27px 0 rgba(0,0,0,.05)',
+    },
+    ':not(pre)>code[class*=language-]': {
+      'white-space': 'pre-line'
     }
   }
   const icon = {
@@ -802,7 +810,7 @@ module.exports = plugin(function({ addComponents }) {
           'border-radius': '0',
           'border': '0',
           'background': 'no-repeat bottom,50% calc(100% - 1px)',
-          'background-image': 'linear-gradient(0deg,#e91e63 2px,rgba(156,39,176,0) 0),linear-gradient(0deg,#d2d2d2 1px,hsla(0,0%,82%,0) 0)',
+          'background-image': 'linear-gradient(0deg,#1a73e8 2px,rgba(156,39,176,0) 0),linear-gradient(0deg,#d2d2d2 1px,hsla(0,0%,82%,0) 0)',
           'background-size': '0 100%,100% 100%',
           'transition': '.2s ease',
         },
@@ -822,28 +830,32 @@ module.exports = plugin(function({ addComponents }) {
           'width':' 100%',
           'height': '100%',
           'font-size': '.6875rem',
-          'color': '#e91e63',
+          'color': '#1a73e8',
           'display': 'flex',
           'line-height': '1.25',
 
           '&:before': {
             'opacity': '1',
-            'border-top-color': '#e91e63',
-            'box-shadow': 'inset 0 1px #e91e63'
+            'border-top-color': '#1a73e8',
+            'box-shadow': 'inset 0 1px #1a73e8'
           },
 
           '&:after': {
             'opacity': '1',
-            'border-top-color': '#e91e63',
-            'box-shadow': 'inset 0 1px #e91e63'
+            'border-top-color': '#1a73e8',
+            'box-shadow': 'inset 0 1px #1a73e8'
+          },
+
+          '&.text-white': {
+            'color': '#ffffff !important'
           }
         },
 
         '&.input-group-outline': {
           '.form-label+.form-control': {
-            'border-color': '#e91e63',
+            'border-color': '#1a73e8',
             'border-top-color': 'transparent',
-            'box-shadow': 'inset 1px 0 #e91e63, inset -1px 0 #e91e63, inset 0 -1px #e91e63'
+            'box-shadow': 'inset 1px 0 #1a73e8, inset -1px 0 #1a73e8, inset 0 -1px #1a73e8'
           },
         },
 
@@ -855,7 +867,7 @@ module.exports = plugin(function({ addComponents }) {
 
         '&.input-group-static': {
           'label': {
-            'color': '#e91e63'
+            'color': '#1a73e8'
           }
         },
 
