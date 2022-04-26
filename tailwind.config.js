@@ -293,7 +293,13 @@ module.exports = {
       ping: 'ping 1s cubic-bezier(0, 0, 0.2, 1) infinite',
       pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       bounce: 'bounce 1s infinite',
-      progress_bar: '1s linear infinite progress_stripe'
+      progress_bar: '1s linear infinite progress_stripe',
+      slide_input: 'slide 8s ease-in-out infinite',
+      slide_card: 'slide 20s ease-in-out infinite',
+      slide_avatars: 'slide 11s ease-in-out infinite',
+      slide_button: 'slide 7s ease-in-out infinite',
+      slide_chip: 'slide 18s ease-in-out infinite',
+      slide_toggle: 'slide 10s ease-in-out infinite'
     },
     aspectRatio: {
       auto: 'auto',
@@ -530,7 +536,7 @@ module.exports = {
     },
     fontFamily: {
       sans: ['Roboto', 'sans-serif'],
-      serif: ['"Roboto Slab"', 'serif'],
+      serif: ['Roboto', 'serif'],
       body: ['Roboto', 'sans-serif'],
     },
     fontSize: {
@@ -741,6 +747,17 @@ module.exports = {
       progress_stripe: {
         '0%': { 
           'background-position-x': '1rem'
+        }
+      },
+      slide: {
+        from: {
+          transform: "translate(50px, 0px)"
+        },
+        '65%': {
+          transform: "translate(0, 0)"
+        },
+        to: {
+          transform: "translate(50px, -0px)"
         }
       }
 
